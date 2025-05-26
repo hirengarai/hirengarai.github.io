@@ -1,62 +1,90 @@
 
-<!-- Main Page -->
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<html>
-  <head>
-    <title>Antithetical Parallels</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link type="application/atom+xml" rel="alternate" href="https://testsubjector.github.io//portfolio/feed.xml" title="Antithetical Parallels" />
-  </head>
-  <body>
-    <nav>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabir Tomer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            background: white;
+            padding: 1px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 15px;
+        }
+        h1, h2 {
+            font-family: Gelasio, sans-serif;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        /*.publication-title {
+            color: #6a0dad;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .co-authors {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: -10px;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hirendra Kumar Garai (হীরেন গরাই)</h1>
+        <!-- <img src="your-photo.jpg" alt="Your Photo"> -->
+        <p><strong>Contact:</strong> firstname lastname at ntu dot edu dot sg</p>
+        
+        <h2>About</h2>
+        <p>I am currently a Research fellow  advised by <a href="https://thomaspeyrin.github.io/web/"> Prof. Thomas Peyrin</a> at <a href="https://www.ntu.edu.sg/spms"> SPMS </a> in <a href = "https://www.ntu.edu.sg"> NTU Singapore </a>. I completed my PhD
+		from <a href = "https://www.bits-pilani.ac.in/hyderabad/"> BITS Pilani, Hyderabad Campus </a> under the guidance of <a href = "https://sites.google.com/view/sabyasachidey"> Prof. Sabyasachi Dey </a>.
+		I am primarily working in automatic tools for cryptanalysis. I am also interested in quantum computing.</p>
+        
+        <h2>Publications</h2>
         <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/misc">Misc</a></li>
-        <li><a href="/about">About Me</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
+            <li>
+                <a href="https://doi.org/10.1007/978-3-031-56232-7_14" class="publication-title">Grover on Chosen IV Related Key Attack Against GRAIN-128a</a>
+                <div class="co-authors">with Arpita Maitra, Asmita Samanta, Subha Kar, Mintu Mandal and Sabyasachi Dey <strong>(INDOCRYPT 2024)</strong></div>
+            </li>
+            <li>
+                <a href=" https://doi.org/10.46586/tosc.v2023.i1.89-110" class="publication-title">Cryptanalysis of reduced round ChaCha-new attack and deeper analysis</a>
+                <div class="co-authors">with Sabyasachi Dey and Subhamoy Maitra <strong>(FSE 2023)</strong></div>
+            </li>
+            <li>
+                <a href="https://doi.org/10.1007/978-3-031-07082-2_4" class="publication-title">Revamped Differential-Linear Cryptanalysis on Reduced Round ChaCha</a>
+                <div class="co-authors">with Sabyasachi Dey, Nitin Kumar Sharma and Santanu Sarkar <strong>(EUROCRYPT 2022)</strong></div>
+            </li>
         </ul>
-    </nav>
-    <hr>
-    <post class="container">
-      <div class="blurb">
-	<h5>Salutations</h5>
-    <hr>
-	<p> Hello, I'm Kumar Prasun, a recent CS graduate from New York University and this is my corner of the Internet. <br> 
-        You can find more information about me in the <a href="/about">About Me</a> and 
-        <a href="/files/Kumar_Prasun_resume.pdf">CV</a> pages.
-	</p>
-</div>
-<hr>
-<h5>Recent Posts</h5>
-<hr>
-<ul class="posts">
-    
-        <li> <a href="/blog/2021/04/07/Cleaning-Up-Old-Github-Repo-Branches" title="Cleaning Up Old Github Repo Branches">Cleaning Up Old Github Repo Branches</a></li>
-    
-        <li> <a href="/blog/2021/04/01/GTC-2021-Presentation" title="GTC 2021 Presentation">GTC 2021 Presentation</a></li>
-    
-        <li> <a href="/blog/2020/09/30/A-Primer-On-HDF5-File-Reading-In-Fortran-90" title="A Primer On HDF5 File-Reading In Fortran 90">A Primer On HDF5 File-Reading In Fortran 90</a></li>
-    
-        <li> <a href="/blog/2020/05/08/The-Rise-Of-Nations-Taunt-Telegram-Bot" title="The Rise Of Nations Taunt Telegram Bot">The Rise Of Nations Taunt Telegram Bot</a></li>
-    
-        <li> <a href="/blog/2020/03/26/The-Julia-Compilation-Process" title="The Julia Compilation Process">The Julia Compilation Process</a></li>
-    
-        <li> <a href="/blog/2020/01/07/New-Year-With-LaTeX-Support-Plus-Comment-Changes" title="New Year With LaTeX Support Plus Comment Changes">New Year With LaTeX Support Plus Comment Changes</a></li>
-    
-        <li> <a href="/blog/2019/03/17/Making-A-Simple-Telegram-Bot-In-Julia" title="Making A Simple Telegram Bot In Julia">Making A Simple Telegram Bot In Julia</a></li>
-    
-</ul>
-
-    </post>
-    <footer>
-       <ul>
-       <li><a href="mailto:prasunk3@gmail.com">Mail</a></li>
-       <li><a href="https://github.com/TestSubjector">GitHub</a></li>
-       <li><a href="/files/Kumar_Prasun_resume.pdf">CV</a></li>
-       <li><a href="/feed.xml">RSS</a></li>
-       </ul>
-    </footer>
-  </body>
+        
+        <h2><a href="cv-kabir-tomer.pdf">CV</a></h2>
+   </div>
+</body>
 </html>
