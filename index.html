@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" sizes="32x32" href="assets/images/favicon.ico">
-    <title>Hiren</title>
-    <style>
-        body {
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" sizes="32x32" href="assets/images/favicon.ico">
+        <title>Hiren</title>
+        <style>
+            body {
             font-family: Arial, sans-serif;
             max-width: 800px;
             margin: auto;
@@ -18,103 +17,113 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
-        }
-        .container {
+            }
+            .container {
             background: white;
             padding: 1px 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-        max-width: 150px;
-        border-radius: 8px;
-        float: right;           /* ★ pushes the portrait to the right */
-        margin: 0 0 15px 15px;  /* top right bottom left — adds space on the left */
-    		}
-        h1, h2 {
+            }
+            img {
+            max-width: 150px;
+            border-radius: 8px;
+            float: right;           /* ★ pushes the portrait to the right */
+            margin: 0 0 15px 15px;  /* top right bottom left — adds space on the left */
+            }
+            .pronunciation {
+            font-size: 0.6em;     /* ~60% of your 
+            <h1>
+            size */
+            font-weight: normal;  /* optional: make it less bold */
+            vertical-align: middle;
+            }
+            .pronunciation button,
+            .pronunciation a {
+            font-size: 1.2em;     /* scale the 🔊 icon up a bit if desired */
+            padding: 0;
+            margin-left: 0.2em;
+            }
+            h1, h2 {
             font-family: Gelasio, sans-serif;
             color: #0056b3;
             margin-bottom: 10px;
-        }
-        a {
+            }
+            a {
             color: #0077cc;
             text-decoration: none;
-        }
-        a:hover {
+            }
+            a:hover {
             text-decoration: underline;
-        }
-        ul {
+            }
+            ul {
             padding-left: 20px;
-        }
-        /*.publication-title {
+            }
+            /*.publication-title {
             color: #6a0dad;
             font-size: 1.2em;
             font-weight: bold;
-        }
-        .co-authors {
+            }
+            .co-authors {
             font-size: 0.9em;
             color: #555;
             margin-top: -10px;
-        }*/
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Hirendra Kumar Garai (হীরেন গরাই) [pronounced: <a href="https://en.wikipedia.org/wiki/Help:IPA/Bengali" target="_blank"
-                                title="About IPA/Bengali" class="tooltip">
-                                /hiːrɛn/</a> 
-		<button
-    type="button"
-    aria-label="Play pronunciation"
-    onclick="document.getElementById('pronounce').play()"
-    style="border:none; background:none; padding:0; font-size:1em; cursor:pointer;"
-  >
-    🔊
-  </button>]
-	</h1>
-	    <audio id="pronounce" preload="none">
-  <source src="assets/audio/name.mp3" type="audio/mpeg">
-  Your browser doesn’t support audio.
-</audio>
-        <img src="assets/images/hirendra-potrait.JPG" alt="Myself in Chennai in 2024">
-        <p><strong>Contact:</strong> firstname lastname at ntu dot edu dot sg</p>
-        
-        <h2>About</h2>
-        <p>I am currently a Research fellow  advised by <a href="https://thomaspeyrin.github.io/web/"> Prof. Thomas Peyrin</a> at <a href="https://www.ntu.edu.sg/spms"> SPMS </a> in <a href = "https://www.ntu.edu.sg"> NTU Singapore</a>. I completed my PhD
-		from <a href = "https://www.bits-pilani.ac.in/hyderabad/"> BITS Pilani, Hyderabad Campus </a> under the guidance of <a href = "https://sites.google.com/view/sabyasachidey"> Prof. Sabyasachi Dey</a> in Mathematics.
-		I am primarily work in cyrptanalysis of symmetric primitives. Currently I exploring automatic tools for cryptanalysis along side with quantum computing.</p>
-        
-        <h2>Some Publications</h2>
-        <ul>
-            <li>
-                <a href="https://doi.org/10.1007/978-3-031-56232-7_14" class="publication-title">Grover on Chosen IV Related Key Attack Against GRAIN-128a</a>
-                <div class="co-authors">with Arpita Maitra, Asmita Samanta, Subha Kar, Mintu Mandal and Sabyasachi Dey.<strong>(INDOCRYPT 2024)</strong></div>
-            </li>
-            <li>
-                <a href=" https://doi.org/10.46586/tosc.v2023.i1.89-110" class="publication-title">Cryptanalysis of reduced round ChaCha-new attack and deeper analysis</a>
-                <div class="co-authors">with Sabyasachi Dey and Subhamoy Maitra.<strong>(FSE 2023)</strong></div>
-            </li>
-	    <li>
-                <a href=" https://doi.org/10.1109/TIT.2023.3269790" class="publication-title">Enhanced Differential-Linear Attacks on Reduced Round ChaCha</a>
-                <div class="co-authors">with Sabyasachi Dey, Nitin Kumar Sharma and Santanu Sarkar.<strong>(IEEE TIT 2023)</strong></div>
-            </li>
-	
-            <li>
-                <a href="https://doi.org/10.1007/978-3-031-07082-2_4" class="publication-title">Revamped Differential-Linear Cryptanalysis on Reduced Round ChaCha</a>
-                <div class="co-authors">with Sabyasachi Dey, Nitin Kumar Sharma and Santanu Sarkar.<strong>(EUROCRYPT 2022)</strong></div>
-            </li>
-        </ul>
-
-	<hr style="border:0; height:1px; background:#ccc; margin:40px auto; max-width:800px;">
-        <h2>
-	<a href="assets/pdf/hirendra_cv.pdf">CV</a> &nbsp;|&nbsp;
-  <a href="https://scholar.google.com/citations?user=96a2MEsAAAAJ&hl=en"
-     target="_blank" rel="noopener">Google Scholar</a> &nbsp;|&nbsp;
-  <a href="https://www.linkedin.com/in/hirengarai/"
-     target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp;
-  <a href="https://www.researchgate.net/profile/Hirendra_Garai"
-     target="_blank" rel="noopener">Research Gate</a>	
-	</h2>
-   </div>
-</body>
+            }*/
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hirendra Kumar Garai (হীরেন গরাই) <span class="pronunciation">[pronounced: <a href="https://en.wikipedia.org/wiki/Help:IPA/Bengali" target="_blank"
+                title="About IPA/Bengali" class="tooltip">
+                /hiːrɛn/</a> 
+                <button
+                    type="button"
+                    aria-label="Play pronunciation"
+                    onclick="document.getElementById('pronounce').play()"
+                    style="border:none; background:none; padding:0; font-size:1em; cursor:pointer;"
+                    >
+                🔊
+                </button>] </span>
+            </h1>
+            <audio id="pronounce" preload="none">
+                <source src="assets/audio/name.mp3" type="audio/mpeg">
+                Your browser doesn’t support audio.
+            </audio>
+            <img src="assets/images/hirendra-potrait.JPG" alt="Myself in Chennai in 2024">
+            <p><strong>Contact:</strong> firstname lastname at ntu dot edu dot sg</p>
+            <h2>About</h2>
+            <p>I am currently a Research fellow  advised by <a href="https://thomaspeyrin.github.io/web/"> Prof. Thomas Peyrin</a> at <a href="https://www.ntu.edu.sg/spms"> SPMS </a> in <a href = "https://www.ntu.edu.sg"> NTU Singapore</a>. I completed my PhD
+                from <a href = "https://www.bits-pilani.ac.in/hyderabad/"> BITS Pilani, Hyderabad Campus </a> under the guidance of <a href = "https://sites.google.com/view/sabyasachidey"> Prof. Sabyasachi Dey</a> in Mathematics.
+                I am primarily work in cyrptanalysis of symmetric primitives. Currently I exploring automatic tools for cryptanalysis along side with quantum computing.
+            </p>
+            <h2>Some Publications</h2>
+            <ul>
+                <li>
+                    <a href="https://doi.org/10.1007/978-3-031-56232-7_14" class="publication-title">Grover on Chosen IV Related Key Attack Against GRAIN-128a</a>
+                    <div class="co-authors">with Arpita Maitra, Asmita Samanta, Subha Kar, Mintu Mandal and Sabyasachi Dey.<strong>(INDOCRYPT 2024)</strong></div>
+                </li>
+                <li>
+                    <a href=" https://doi.org/10.46586/tosc.v2023.i1.89-110" class="publication-title">Cryptanalysis of reduced round ChaCha-new attack and deeper analysis</a>
+                    <div class="co-authors">with Sabyasachi Dey and Subhamoy Maitra.<strong>(FSE 2023)</strong></div>
+                </li>
+                <li>
+                    <a href=" https://doi.org/10.1109/TIT.2023.3269790" class="publication-title">Enhanced Differential-Linear Attacks on Reduced Round ChaCha</a>
+                    <div class="co-authors">with Sabyasachi Dey, Nitin Kumar Sharma and Santanu Sarkar.<strong>(IEEE TIT 2023)</strong></div>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1007/978-3-031-07082-2_4" class="publication-title">Revamped Differential-Linear Cryptanalysis on Reduced Round ChaCha</a>
+                    <div class="co-authors">with Sabyasachi Dey, Nitin Kumar Sharma and Santanu Sarkar.<strong>(EUROCRYPT 2022)</strong></div>
+                </li>
+            </ul>
+            <hr style="border:0; height:1px; background:#ccc; margin:40px auto; max-width:800px;">
+            <h2>
+                <a href="assets/pdf/hirendra_cv.pdf">CV</a> &nbsp;|&nbsp;
+                <a href="https://scholar.google.com/citations?user=96a2MEsAAAAJ&hl=en"
+                    target="_blank" rel="noopener">Google Scholar</a> &nbsp;|&nbsp;
+                <a href="https://www.linkedin.com/in/hirengarai/"
+                    target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp;
+                <a href="https://www.researchgate.net/profile/Hirendra_Garai"
+                    target="_blank" rel="noopener">Research Gate</a>	
+            </h2>
+        </div>
+    </body>
 </html>
