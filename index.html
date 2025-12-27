@@ -1,0 +1,150 @@
+---
+layout: home
+title: Home
+---
+
+<!-- Greeting -->
+<div class="greeting-wrapper">
+    <div class="greeting">Konnichiwa!</div>
+    <div class="greeting-info">
+        <span class="greeting-info-btn material-symbols-outlined">info</span>
+        <span class="greeting-tooltip" id="greeting-tooltip">Japanese — Good afternoon</span>
+    </div>
+</div>
+
+<p class="intro-text">
+    I am a cryptography researcher working on the analysis and security of symmetric-key primitives.
+    My work involves using automated tools like SAT solvers, MILP, and SMT solvers to find vulnerabilities
+    in ciphers, alongside exploring quantum computing applications in cryptanalysis.
+</p>
+
+<!-- Section Navigation -->
+<nav class="section-nav">
+    <button class="section-tab active" data-section="work">
+        <span class="tab-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </span>
+        Work
+    </button>
+    <button class="section-tab" data-section="academic">
+        <span class="tab-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        </span>
+        Academic
+    </button>
+    <button class="section-tab" data-section="research">
+        <span class="tab-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path><path d="M11 8v6M8 11h6"></path></svg>
+        </span>
+        Research
+    </button>
+</nav>
+
+<!-- Work Section -->
+<section id="work" class="content-section active">
+    <div class="section-header">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </div>
+        <div>
+            <h2 class="section-title">Work</h2>
+            <p class="section-subtitle">Current and previous positions</p>
+        </div>
+    </div>
+    <div class="section-content">
+        <div class="position-item">
+            <div class="position-title">Research Fellow</div>
+            <a href="https://www.ntu.edu.sg/spms" target="_blank" class="position-org">School of Physical and Mathematical Sciences, NTU Singapore</a>
+            <div class="position-period">2024 – Present</div>
+            <p class="position-desc">Working with <a href="https://thomaspeyrin.github.io/web/" target="_blank">Prof. Thomas Peyrin</a> on symmetric-key cryptanalysis and automated cryptanalysis tools.</p>
+        </div>
+        <div class="position-item">
+            <div class="position-title">PhD Researcher</div>
+            <a href="https://www.bits-pilani.ac.in/hyderabad/" target="_blank" class="position-org">BITS Pilani, Hyderabad Campus</a>
+            <div class="position-period">2019 – 2024</div>
+            <p class="position-desc">Doctoral research under <a href="https://sites.google.com/view/sabyasachidey" target="_blank">Prof. Sabyasachi Dey</a> focusing on differential-linear cryptanalysis of stream ciphers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Academic Section -->
+<section id="academic" class="content-section">
+    <div class="section-header">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        </div>
+        <div>
+            <h2 class="section-title">Academic</h2>
+            <p class="section-subtitle">Education background</p>
+        </div>
+    </div>
+    <div class="section-content">
+        <div class="education-item">
+            <div class="education-degree">Ph.D. in Mathematics</div>
+            <a href="https://www.bits-pilani.ac.in/hyderabad/" target="_blank" class="education-institution">BITS Pilani, Hyderabad Campus</a>
+            <div class="education-details">2020 - 2024 · Advisor: <a href="https://sites.google.com/view/sabyasachidey/home" target="_blank">Sabyasachi Dey</a><br>Thesis: Cryptanalysis of symmetric primitives using differential-linear techniques</div>
+        </div>
+        <div class="education-item">
+            <div class="education-degree">B.Ed in Mathematics</div>
+            <a href="https://makatti.org/home.php" target="_blank" class="education-institution">Moulana Abul Kalam Ajad Teachers' Training Institute</a>
+            <div class="education-details">2018-2020</div>
+        </div>
+        <div class="education-item">
+            <div class="education-degree">MS in Mathematics</div>
+            <a href="https://www.visvabharati.ac.in/" target="_blank" class="education-institution">Visva-Bharati University</a>
+            <div class="education-details">2016-2018</div>
+        </div>
+        <div class="education-item">
+            <div class="education-degree">BS in Mathematics</div>
+            <a href="https://bolpurcollege.edu.in/" target="_blank" class="education-institution">Bolpur College</a>
+            <div class="education-details">2013-2016</div>
+        </div>
+    </div>
+</section>
+
+<!-- Research Section -->
+<section id="research" class="content-section">
+    <div class="section-header">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path><path d="M11 8v6M8 11h6"></path></svg>
+        </div>
+        <div>
+            <h2 class="section-title">Research</h2>
+            <p class="section-subtitle">Topics and publications</p>
+        </div>
+    </div>
+    <div class="section-content">
+        <p>My research focuses on the security analysis of symmetric-key cryptographic primitives, particularly stream ciphers and block ciphers. I develop and apply automated techniques to discover vulnerabilities and improve cryptanalytic methods.</p>
+
+        <h3 style="font-size: 1rem; margin: 24px 0 12px; color: var(--text);">Research Topics</h3>
+        <div class="research-topics">
+            <span class="topic-tag">Differential-Linear Cryptanalysis</span>
+            <span class="topic-tag">Stream Ciphers (ChaCha, GRAIN)</span>
+            <span class="topic-tag">SAT/MILP/SMT Solvers</span>
+            <span class="topic-tag">Quantum Cryptanalysis</span>
+            <span class="topic-tag">Automated Tools</span>
+        </div>
+
+        <h3 style="font-size: 1rem; margin: 24px 0 12px; color: var(--text);">Selected Publications</h3>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <a href="https://doi.org/10.1007/978-3-031-56232-7_14" target="_blank" class="publication-title">Grover on Chosen IV Related Key Attack Against GRAIN-128a</a>
+                <div class="publication-meta">with A. Maitra, A. Samanta, S. Kar, M. Mandal, S. Dey — <span class="publication-venue">INDOCRYPT 2023</span></div>
+            </li>
+            <li class="publication-item">
+                <a href="https://doi.org/10.46586/tosc.v2023.i1.89-110" target="_blank" class="publication-title">Cryptanalysis of Reduced Round ChaCha — New Attack and Deeper Analysis</a>
+                <div class="publication-meta">with S. Dey, S. Maitra — <span class="publication-venue">FSE 2023</span></div>
+            </li>
+            <li class="publication-item">
+                <a href="https://doi.org/10.1109/TIT.2023.3269790" target="_blank" class="publication-title">Enhanced Differential-Linear Attacks on Reduced Round ChaCha</a>
+                <div class="publication-meta">with S. Dey, N. K. Sharma, S. Sarkar — <span class="publication-venue">IEEE TIT 2023</span></div>
+            </li>
+            <li class="publication-item">
+                <a href="https://doi.org/10.1007/978-3-031-07082-2_4" target="_blank" class="publication-title">Revamped Differential-Linear Cryptanalysis on Reduced Round ChaCha</a>
+                <div class="publication-meta">with S. Dey, N. K. Sharma, S. Sarkar — <span class="publication-venue">EUROCRYPT 2022</span></div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% include footer.html %}

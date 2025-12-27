@@ -1,0 +1,58 @@
+# Site settings
+title: Hiren
+description: "Hirendra Kumar Garai—Research Fellow at NTU Singapore. Cryptanalysis of symmetric primitives and quantum computing."
+url: "https://hirengarai.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: Hirendra Kumar Garai
+  email: hirendra.garai@ntu.edu.sg
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: null  # We'll use MathJax instead
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Permalink structure for blog posts
+permalink: /blog/:year/:month/:title/
+
+# Collections (if needed later)
+collections:
+  - posts
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      math: false
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"

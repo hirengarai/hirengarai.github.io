@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" {% if page.personal_zone %}data-theme="dark"{% endif %}>
+<head>
+    {% include head.html %}
+</head>
+<body {% if page.personal_zone %}class="personal-zone"{% endif %}>
+    {% include theme-toggle.html %}
+    
+    {{ content }}
+    
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    {% if page.layout == 'home' %}
+    <script src="{{ '/assets/js/home.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.personal_zone %}
+    <script src="{{ '/assets/js/personal.js' | relative_url }}"></script>
+    {% endif %}
+</body>
+</html>

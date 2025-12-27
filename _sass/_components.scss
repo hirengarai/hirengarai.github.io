@@ -1,0 +1,181 @@
+// ===========================================
+// COMPONENTS - Reusable UI elements
+// ===========================================
+
+// -----------------------------------------
+// Theme Toggle
+// -----------------------------------------
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100;
+    padding: 0;
+    overflow: hidden;
+
+    &:hover {
+        border-color: var(--link);
+    }
+
+    .icon-sun,
+    .icon-moon {
+        position: absolute;
+        font-size: 20px;
+        color: var(--text);
+        transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .icon-sun {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    .icon-moon {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+
+    @media (max-width: $mobile) {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+
+        .icon-sun,
+        .icon-moon {
+            font-size: 18px;
+        }
+    }
+}
+
+[data-theme="dark"] .theme-toggle {
+    .icon-sun {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .icon-moon {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+// -----------------------------------------
+// Tooltips (generic)
+// -----------------------------------------
+[data-tooltip]:not(em) {
+    position: relative;
+
+    &::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%) translateY(5px);
+        background: var(--text);
+        color: var(--bg);
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        pointer-events: none;
+        z-index: 50;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: var(--text);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        z-index: 50;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:hover::after {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+// -----------------------------------------
+// Back Link
+// -----------------------------------------
+.back-link {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: 'Space Mono', monospace;
+    transition: color 0.2s;
+    z-index: 100;
+
+    &:hover {
+        color: var(--link);
+        text-decoration: none;
+    }
+
+    @media (max-width: $small-mobile) {
+        top: 14px;
+        left: 14px;
+        font-size: 0.8rem;
+    }
+}
+
+// -----------------------------------------
+// Footer Links
+// -----------------------------------------
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 0.9375rem;
+    margin-top: 40px;
+    align-items: center;
+
+    a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: var(--link);
+        }
+    }
+
+    .fun-link {
+        color: var(--link);
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
