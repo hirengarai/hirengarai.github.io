@@ -128,11 +128,7 @@ if (sectionTabs.length > 0) {
 const fallingContainer = document.getElementById('falling-container');
 
 if (fallingContainer) {
-    const symbols = [
-        '⊕', '⊖', '<<<', '>>>', '⊻', 'bias', 'T₀', 'T₁', 'φ', '∫', '∂', '×',
-        '𝔽₂', '∧', '∨', '√', '∀', '0', '1', 'f', 'F', 'π', 'γ', 'ζ', '(', ')',
-        'Pr', 'AES', 'ChaCha', 'Salsa', 'Gauss', 'Euler', 'Urysohn', 'e', '+', 'T₂'
-    ];
+    const symbols = ['\u2295', '<<<', '>>>', '\u2200', 'RSA', 'Markov', '\u2202', '\u2203', '\u2205', '\u221B', '\u221E', '\u222C', '\u222D', '\u222E', 'FFT', '\u229E', '\u229F', '\u2A27', '\u2230', 'SPECK', '\u2234', '\u2235', ' T\u2080', 'T\u2081', 'T\u2082', '\u2208', 'Bernstein', '\u2208', '\u2211', 'Shamir', '\u2243', '\u2208', '\u8747', 'bias', 'φ', '\u227A', 'correlation', '\u2227', '\u2228', '×', '\u{1D53D}\u2082', '\u221A', '0', '1', 'f', 'div', 'F', 'curl', 'π', '\u03B3', '\u0393', 'ζ', '(', ')', 'Pr', 'AES', 'ChaCha', 'Salsa', 'Gauss', 'Euler', 'Urysohn', 'e', '+'];
 
     const MAX_SYMBOLS = 6;
     let activeSymbols = 0;
