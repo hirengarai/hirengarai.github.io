@@ -26,8 +26,7 @@ Pick a frame. Pretend it's moving. Works 60% of the time, every time.
 
 ---
 
-If you're here for the actual content, the website is your friend. If you're here to borrow the look, take it and blame me later.
+If you're here to borrow the look, take it.
 
 Yes, I used GPT to build this. It did the heavy lifting; I just had the patience (and stubbornness) to teach it my taste. Credit where credit’s due.
 
-Hiren © 2026
