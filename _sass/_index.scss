@@ -924,7 +924,7 @@ html.loaded {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.84rem;
-            table-layout: fixed;
+            table-layout: auto;
         }
 
         .ta-table-wrapper {
@@ -976,26 +976,28 @@ html.loaded {
 
         .ta-table th:nth-child(1),
         .ta-table td:nth-child(1) {
-            width: 38%;
             text-align: left;
+            max-width: 300px;
         }
 
         .ta-table th:nth-child(2),
         .ta-table td:nth-child(2) {
-            width: 27%;
             text-align: center;
+            width: 1%;
+            white-space: nowrap;
         }
 
         .ta-table th:nth-child(3),
         .ta-table td:nth-child(3) {
-            width: 15%;
             text-align: center;
+            width: 1%;
+            white-space: nowrap;
         }
 
         .ta-table th:nth-child(4),
         .ta-table td:nth-child(4) {
-            width: 20%;
             text-align: center;
+            width: 1%;
         }
 
         @media (max-width: 900px) {
