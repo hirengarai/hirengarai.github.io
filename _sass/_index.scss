@@ -552,15 +552,19 @@ html.loaded {
             visibility: visible;
         }
 
+        .greeting-tooltip.tooltip-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @media (max-width: 500px) {
             .greeting-tooltip {
                 position: absolute;
                 left: 0;
                 top: calc(100% + 8px);
                 transform: none;
-                white-space: normal;
+                white-space: nowrap;
                 text-align: left;
-                max-width: 200px;
             }
 
             .greeting-tooltip::before {
@@ -935,7 +939,7 @@ html.loaded {
             border-bottom: 2px solid var(--border);
             border-right: 1px solid var(--border);
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -960,6 +964,38 @@ html.loaded {
 
         .ta-table td.course-name {
             white-space: normal;
+        }
+
+        .ta-table td:nth-child(2) {
+            white-space: normal;
+        }
+
+        .ta-table td:nth-child(3) {
+            white-space: normal;
+        }
+
+        .ta-table th:nth-child(1),
+        .ta-table td:nth-child(1) {
+            width: 38%;
+            text-align: left;
+        }
+
+        .ta-table th:nth-child(2),
+        .ta-table td:nth-child(2) {
+            width: 27%;
+            text-align: center;
+        }
+
+        .ta-table th:nth-child(3),
+        .ta-table td:nth-child(3) {
+            width: 15%;
+            text-align: center;
+        }
+
+        .ta-table th:nth-child(4),
+        .ta-table td:nth-child(4) {
+            width: 20%;
+            text-align: center;
         }
 
         @media (max-width: 900px) {
@@ -990,6 +1026,14 @@ html.loaded {
         .ta-table .ta-link {
             color: var(--link);
             text-decoration: none;
+        }
+
+        .ta-table .ta-link--small {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2px;
+            text-align: center;
+            width: 100%;
         }
 
         .ta-table .ta-link:hover {

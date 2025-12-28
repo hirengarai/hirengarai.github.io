@@ -79,6 +79,55 @@ const greetingData = getGreeting();
 document.querySelector('.greeting').textContent = greetingData.text;
 document.querySelector('#greeting-tooltip').textContent = greetingData.tooltip;
 
+// Greeting tooltip tap support for mobile
+const greetingInfo = document.querySelector('.greeting-info');
+const greetingTooltip = document.querySelector('#greeting-tooltip');
+let greetingTimer = null;
+
+function hideGreetingTooltip() {
+    if (greetingTooltip) {
+        greetingTooltip.classList.remove('tooltip-active');
+    }
+    if (greetingTimer) {
+        clearTimeout(greetingTimer);
+        greetingTimer = null;
+    }
+}
+
+if (greetingInfo && greetingTooltip) {
+    // Use touchend instead of click for better mobile response
+    greetingInfo.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Toggle tooltip
+        if (greetingTooltip.classList.contains('tooltip-active')) {
+            hideGreetingTooltip();
+        } else {
+            greetingTooltip.classList.add('tooltip-active');
+            if (greetingTimer) clearTimeout(greetingTimer);
+            greetingTimer = setTimeout(hideGreetingTooltip, 1500);
+        }
+    });
+
+    // Desktop hover support
+    if (window.matchMedia('(pointer: fine)').matches) {
+        greetingInfo.addEventListener('mouseenter', () => {
+            greetingTooltip.classList.add('tooltip-active');
+        });
+        greetingInfo.addEventListener('mouseleave', () => {
+            hideGreetingTooltip();
+        });
+    }
+}
+
+window.addEventListener('scroll', hideGreetingTooltip, { passive: true });
+window.addEventListener('touchstart', (e) => {
+    if (greetingInfo && !greetingInfo.contains(e.target)) {
+        hideGreetingTooltip();
+    }
+}, { passive: true });
+
 // Name pronunciation: play audio only
 const nameTrigger = document.querySelector('.name-casual em');
 const nameAudio = document.getElementById('pronounce');
