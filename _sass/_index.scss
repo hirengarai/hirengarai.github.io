@@ -1265,6 +1265,10 @@ html.loaded {
             white-space: nowrap;
         }
 
+        .footer-credit .fa-copyright {
+            font-size: 0.65em;
+        }
+
         @media (max-width: 420px) {
             .footer-links {
                 gap: 10px 16px;
