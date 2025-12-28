@@ -379,14 +379,14 @@ html.loaded {
             left: calc(100% + 8px);
             top: 50%;
             transform: translateY(-50%);
-            background: color-mix(in srgb, var(--bg-subtle) 92%, transparent);
-            color: var(--text);
+            background: var(--text);
+            color: var(--bg);
             font-family: 'IBM Plex Sans', sans-serif;
             font-size: 0.6rem;
             padding: 3px 6px;
             border-radius: 3px;
-            border: 1px solid var(--border);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+            border: 1px solid var(--text);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
             white-space: nowrap;
             opacity: 0;
             visibility: hidden;
@@ -394,6 +394,10 @@ html.loaded {
             pointer-events: none;
             z-index: 50;
             backdrop-filter: blur(6px);
+        }
+
+        [data-theme="dark"] .name-casual em::after {
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
         }
 
         .name-casual em:hover::after {
