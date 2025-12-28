@@ -99,20 +99,24 @@ html.loaded {
 
         .tooltip-bubble {
             position: fixed;
-            background: color-mix(in srgb, var(--bg-subtle) 92%, transparent);
-            color: var(--text);
+            background: var(--text);
+            color: var(--bg);
             font-size: 0.6rem;
             letter-spacing: 0.3px;
             padding: 3px 6px;
             border-radius: 3px;
-            border: 1px solid var(--border);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+            border: 1px solid var(--text);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(6px);
             white-space: nowrap;
             z-index: 2000;
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.15s ease;
+        }
+
+        [data-theme="dark"] .tooltip-bubble {
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
         }
 
         .tooltip-bubble.visible {
@@ -501,9 +505,9 @@ html.loaded {
             left: calc(100% + 6px);
             top: 50%;
             transform: translateY(-50%);
-            background: var(--bg-subtle);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
+            background: var(--text);
+            border: 1px solid var(--text);
+            color: var(--bg);
             font-family: 'IBM Plex Sans', sans-serif;
             font-size: 0.75rem;
             padding: 4px 10px;
@@ -512,7 +516,12 @@ html.loaded {
             opacity: 0;
             visibility: hidden;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+        }
+
+        [data-theme="dark"] .greeting-tooltip {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .greeting-tooltip::before {
@@ -523,7 +532,7 @@ html.loaded {
             transform: translateY(-50%);
             border-width: 6px;
             border-style: solid;
-            border-color: transparent var(--border) transparent transparent;
+            border-color: transparent var(--text) transparent transparent;
         }
 
         .greeting-tooltip::after {
@@ -534,7 +543,7 @@ html.loaded {
             transform: translateY(-50%);
             border-width: 5px;
             border-style: solid;
-            border-color: transparent var(--bg-subtle) transparent transparent;
+            border-color: transparent var(--text) transparent transparent;
             margin-right: -1px;
         }
 
@@ -545,19 +554,33 @@ html.loaded {
 
         @media (max-width: 500px) {
             .greeting-tooltip {
-                position: fixed;
-                left: 50%;
-                top: auto;
-                bottom: 20px;
-                transform: translateX(-50%);
+                position: absolute;
+                left: 0;
+                top: calc(100% + 8px);
+                transform: none;
                 white-space: normal;
-                text-align: center;
-                max-width: 90vw;
+                text-align: left;
+                max-width: 200px;
             }
 
-            .greeting-tooltip::before,
+            .greeting-tooltip::before {
+                right: auto;
+                left: 12px;
+                top: -6px;
+                bottom: auto;
+                transform: rotate(90deg);
+            }
+
             .greeting-tooltip::after {
-                display: none;
+                right: auto;
+                left: 13px;
+                top: -5px;
+                bottom: auto;
+                transform: rotate(90deg);
+            }
+
+            .greeting-info {
+                position: relative;
             }
         }
 
@@ -637,23 +660,43 @@ html.loaded {
         }
 
         .section-tab[data-section="work"] {
-            --tab-color: #3f51b5;
-            --tab-bg: rgba(63, 81, 181, 0.12);
+            --tab-color: #7c3aed;
+            --tab-bg: rgba(124, 58, 237, 0.12);
+        }
+
+        [data-theme="dark"] .section-tab[data-section="work"] {
+            --tab-color: #a78bfa;
+            --tab-bg: rgba(167, 139, 250, 0.15);
         }
 
         .section-tab[data-section="academic"] {
-            --tab-color: #a16207;
-            --tab-bg: rgba(161, 98, 7, 0.12);
+            --tab-color: #2563eb;
+            --tab-bg: rgba(37, 99, 235, 0.12);
+        }
+
+        [data-theme="dark"] .section-tab[data-section="academic"] {
+            --tab-color: #60a5fa;
+            --tab-bg: rgba(96, 165, 250, 0.15);
         }
 
         .section-tab[data-section="research"] {
-            --tab-color: #15803d;
-            --tab-bg: rgba(21, 128, 61, 0.12);
+            --tab-color: #0891b2;
+            --tab-bg: rgba(8, 145, 178, 0.12);
+        }
+
+        [data-theme="dark"] .section-tab[data-section="research"] {
+            --tab-color: #22d3ee;
+            --tab-bg: rgba(34, 211, 238, 0.15);
         }
 
         .section-tab[data-section="teaching"] {
-            --tab-color: #ef4444;
-            --tab-bg: rgba(239, 68, 68, 0.12);
+            --tab-color: #ea580c;
+            --tab-bg: rgba(234, 88, 12, 0.12);
+        }
+
+        [data-theme="dark"] .section-tab[data-section="teaching"] {
+            --tab-color: #fb923c;
+            --tab-bg: rgba(251, 146, 60, 0.15);
         }
 
         .section-tab:hover,
@@ -662,29 +705,6 @@ html.loaded {
             border-color: var(--tab-color);
             color: var(--tab-color);
             text-decoration: none;
-        }
-
-        .section-tab[data-section="teaching"]:hover,
-        .section-tab[data-section="teaching"].active {
-            background: rgba(239, 68, 68, 0.12);
-            border-color: #ef4444;
-            color: #ef4444;
-        }
-
-        [data-theme="dark"] .section-tab[data-section="work"] {
-            --tab-bg: rgba(63, 81, 181, 0.2);
-        }
-
-        [data-theme="dark"] .section-tab[data-section="academic"] {
-            --tab-bg: rgba(161, 98, 7, 0.2);
-        }
-
-        [data-theme="dark"] .section-tab[data-section="research"] {
-            --tab-bg: rgba(21, 128, 61, 0.2);
-        }
-
-        [data-theme="dark"] .section-tab[data-section="teaching"] {
-            --tab-bg: rgba(239, 68, 68, 0.2);
         }
 
         @media (max-width: 500px) {
@@ -737,18 +757,33 @@ html.loaded {
         }
 
         #work .section-icon {
-            background: rgba(63, 81, 181, 0.12);
-            color: #3f51b5;
+            background: rgba(124, 58, 237, 0.12);
+            color: #7c3aed;
+        }
+
+        [data-theme="dark"] #work .section-icon {
+            background: rgba(167, 139, 250, 0.15);
+            color: #a78bfa;
         }
 
         #academic .section-icon {
-            background: rgba(161, 98, 7, 0.12);
-            color: #a16207;
+            background: rgba(37, 99, 235, 0.12);
+            color: #2563eb;
+        }
+
+        [data-theme="dark"] #academic .section-icon {
+            background: rgba(96, 165, 250, 0.15);
+            color: #60a5fa;
         }
 
         #research .section-icon {
-            background: rgba(21, 128, 61, 0.12);
-            color: #15803d;
+            background: rgba(8, 145, 178, 0.12);
+            color: #0891b2;
+        }
+
+        [data-theme="dark"] #research .section-icon {
+            background: rgba(34, 211, 238, 0.15);
+            color: #22d3ee;
         }
 
         .section-title {
@@ -961,14 +996,23 @@ html.loaded {
             text-decoration: underline;
         }
 
-        /* Teaching section red accent */
+        /* Teaching section orange accent */
         .teaching-icon {
-            background: rgba(239, 68, 68, 0.1) !important;
-            color: #ef4444;
+            background: rgba(234, 88, 12, 0.12) !important;
+            color: #ea580c;
+        }
+
+        [data-theme="dark"] .teaching-icon {
+            background: rgba(251, 146, 60, 0.15) !important;
+            color: #fb923c;
         }
 
         #teaching .section-title {
-            color: #ef4444;
+            color: #ea580c;
+        }
+
+        [data-theme="dark"] #teaching .section-title {
+            color: #fb923c;
         }
 
         /* Research Topics */

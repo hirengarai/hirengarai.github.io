@@ -1,6 +1,7 @@
 (function () {
     try {
-        const savedTheme = localStorage.getItem('theme');
+        // Use sessionStorage so theme resets when tab is closed
+        const savedTheme = sessionStorage.getItem('theme');
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const theme = (savedTheme === 'dark' || savedTheme === 'light')
             ? savedTheme

@@ -143,14 +143,15 @@ const sections = document.querySelectorAll('.content-section');
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
 
-        const savedTheme = localStorage.getItem('theme');
+        // Use sessionStorage so theme resets when tab is closed
+        const savedTheme = sessionStorage.getItem('theme');
         if (savedTheme !== 'dark' && savedTheme !== 'light') {
-            localStorage.removeItem('theme');
+            sessionStorage.removeItem('theme');
         }
 
         const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
         systemThemeQuery.addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
+            if (!sessionStorage.getItem('theme')) {
                 html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
             }
         });
@@ -159,7 +160,7 @@ const sections = document.querySelectorAll('.content-section');
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            sessionStorage.setItem('theme', newTheme);
         });
 
         // Tooltip auto-placement

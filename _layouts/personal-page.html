@@ -23,7 +23,7 @@
 
 <body>
     <nav class="top-nav">
-        <a href="{{ page.back_link | default: '/vault-5b2c9/personal.html' | relative_url }}" class="back-link">
+        <a href="{{ page.back_link | default: '/archive/personal.html' | relative_url }}" class="back-link">
             <span class="material-symbols-outlined">arrow_back</span>
             back
         </a>
@@ -38,7 +38,7 @@
     </nav>
 
     <nav class="bottom-nav">
-        <a href="{{ page.back_link | default: '/vault-5b2c9/personal.html' | relative_url }}" class="nav-back">
+        <a href="{{ page.back_link | default: '/archive/personal.html' | relative_url }}" class="nav-back">
             <span class="material-symbols-outlined">arrow_back</span>
             back
         </a>
@@ -81,8 +81,13 @@
     <!-- Theme init (before main JS to prevent flash) -->
     <script>
         (function() {
-            var theme = localStorage.getItem('personal-theme');
-            document.documentElement.setAttribute('data-theme', theme || 'dark');
+            // Personal section defaults to dark (different world aesthetic)
+            // Use sessionStorage so it resets to dark when tab is closed
+            var savedTheme = sessionStorage.getItem('personal-theme');
+            var theme = (savedTheme === 'dark' || savedTheme === 'light')
+                ? savedTheme
+                : 'dark'; // Default to dark mode
+            document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
 

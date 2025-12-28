@@ -450,7 +450,7 @@
     <div class="container">
         <div class="coming-soon">might come someday !</div>
         <div class="poster-container">
-            <a href="/vault-5b2c9/personal.html" class="poster" id="poster-link">
+            <a href="/archive/personal.html" class="poster" id="poster-link">
                 <span class="material-symbols-outlined poster-icon" id="door-icon">door_front</span>
                 <div class="poster-title">Side Quest</div>
                 <div class="poster-subtitle">photos • notes • tiny obsessions</div>
@@ -461,20 +461,23 @@
     </div>
 
     <script>
-        // Theme toggle - dark by default for personal zone
+        // Archive section defaults to dark (different world aesthetic)
         const themeToggle = document.getElementById('theme-toggle');
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const html = document.documentElement;
 
-        // Check for saved personal zone theme, default to dark
-        const savedTheme = localStorage.getItem('personal-theme');
-        html.setAttribute('data-theme', savedTheme || 'dark');
+        // Use sessionStorage so it resets to dark when tab is closed
+        const savedTheme = sessionStorage.getItem('personal-theme');
+        const theme = (savedTheme === 'dark' || savedTheme === 'light')
+            ? savedTheme
+            : 'dark'; // Default to dark mode
+        html.setAttribute('data-theme', theme);
 
         function toggleTheme() {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('personal-theme', newTheme);
+            sessionStorage.setItem('personal-theme', newTheme);
         }
 
         themeToggle.addEventListener('click', toggleTheme);
@@ -488,9 +491,9 @@
             e.preventDefault();
             doorIcon.textContent = 'door_open';
             doorIcon.style.color = 'var(--glow)';
-            
+
             setTimeout(() => {
-                window.location.href = '/vault-5b2c9/personal.html';
+                window.location.href = '/archive/personal.html';
             }, 300);
         });
     </script>

@@ -528,7 +528,7 @@
 
 <body>
     <nav class="top-nav">
-        <a href="{{ '/personal/thoughts/' | relative_url }}" class="back-link">← back</a>
+        <a href="{{ '/static/thoughts/' | relative_url }}" class="back-link">← back</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light mode">
             <span class="material-symbols-outlined icon-sun">light_mode</span>
             <span class="material-symbols-outlined icon-moon">dark_mode</span>
@@ -536,7 +536,7 @@
     </nav>
 
     <nav class="bottom-nav">
-        <a href="{{ '/personal/thoughts/' | relative_url }}" class="nav-back">← back</a>
+        <a href="{{ '/static/thoughts/' | relative_url }}" class="nav-back">← back</a>
         <button class="theme-toggle nav-toggle" id="theme-toggle-mobile" aria-label="Toggle light mode">
             <span class="material-symbols-outlined icon-sun">light_mode</span>
             <span class="material-symbols-outlined icon-moon">dark_mode</span>
@@ -579,16 +579,19 @@
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const html = document.documentElement;
 
-        const savedTheme = localStorage.getItem('personal-theme');
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-        }
+        // Personal section defaults to dark (different world aesthetic)
+        // Use sessionStorage so it resets to dark when tab is closed
+        const savedTheme = sessionStorage.getItem('personal-theme');
+        const theme = (savedTheme === 'dark' || savedTheme === 'light')
+            ? savedTheme
+            : 'dark'; // Default to dark mode
+        html.setAttribute('data-theme', theme);
 
         function toggleTheme() {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('personal-theme', newTheme);
+            sessionStorage.setItem('personal-theme', newTheme);
         }
 
         themeToggle.addEventListener('click', toggleTheme);

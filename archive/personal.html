@@ -53,7 +53,7 @@
         <!-- Section Cards Grid -->
         <div class="sections-grid">
             
-            <a href="/personal/about" class="section">
+            <a href="/static/about" class="section">
                 <div class="section-header">
                     <span class="section-icon material-symbols-outlined">person</span>
                     <h2 class="section-title">About Me</h2>
@@ -62,7 +62,7 @@
                 <div class="section-arrow">know more ⟶</div>
             </a>
 
-            <a href="/personal/photography" class="section">
+            <a href="/static/photography" class="section">
                 <div class="section-header">
                     <span class="section-icon material-symbols-outlined">photo_camera</span>
                     <h2 class="section-title">Photography</h2>
@@ -71,7 +71,7 @@
                 <div class="section-arrow">have a look ⟶</div>
             </a>
 
-            <a href="/personal/thoughts" class="section">
+            <a href="/static/thoughts" class="section">
                 <div class="section-header">
                     <span class="section-icon material-symbols-outlined">psychology</span>
                     <h2 class="section-title">Thoughts</h2>
@@ -80,7 +80,7 @@
                 <div class="section-arrow">explore ⟶</div>
             </a>
 
-            <a href="/personal/interests" class="section">
+            <a href="/static/interests" class="section">
                 <div class="section-header">
                     <span class="section-icon material-symbols-outlined">headphones</span>
                     <h2 class="section-title">Interests</h2>
@@ -89,7 +89,7 @@
                 <div class="section-arrow">see if matches ⟶</div>
             </a>
 
-            <a href="/personal/contact" class="section">
+            <a href="/static/contact" class="section">
                 <div class="section-header">
                     <span class="section-icon material-symbols-outlined">mail</span>
                     <h2 class="section-title">Say Hello</h2>
@@ -109,8 +109,13 @@
     <!-- Theme init script -->
     <script>
         (function() {
-            var theme = localStorage.getItem('personal-theme');
-            document.documentElement.setAttribute('data-theme', theme || 'dark');
+            // Archive section defaults to dark (different world aesthetic)
+            // Use sessionStorage so it resets to dark when tab is closed
+            var savedTheme = sessionStorage.getItem('personal-theme');
+            var theme = (savedTheme === 'dark' || savedTheme === 'light')
+                ? savedTheme
+                : 'dark'; // Default to dark mode
+            document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
 

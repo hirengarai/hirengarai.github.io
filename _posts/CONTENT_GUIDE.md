@@ -139,7 +139,7 @@ $$
 
 ## 📷 PHOTOGRAPHY
 
-Location: `personal/photography.html`
+Location: `static/photography.html`
 
 ### Single Photo with Description
 
@@ -208,7 +208,7 @@ Location: `personal/photography.html`
 
 ## 🎬 INTERESTS (Anime, Movies, Books, Links)
 
-Location: `personal/interests.html`
+Location: `static/interests.html`
 
 ### Media Item with External Link (IMDB/MAL)
 
@@ -297,8 +297,8 @@ Add to `_config.yml`:
 
 ```yaml
 exclude:
-  - personal/contact.html
-  - personal/about.html
+  - static/contact.html
+  - static/about.html
 ```
 
 Or add front matter to the file:
@@ -316,6 +316,6 @@ published: false
 1. **Images**: Always use `alt` text for accessibility
 2. **Videos**: Use `preload="metadata"` to load only video info initially
 3. **Tags**: Keep them consistent for filtering to work
-4. **Paths**: Use `../assets/` for pages in `/personal/` folder
+4. **Paths**: Use `../assets/` for pages in `/static/` folder
 5. **Dates**: Posts are sorted by date (newest first)
 6. **Lightbox**: All images in Photography and Blog posts are clickable - opens full size popup (press Escape or click outside to close)

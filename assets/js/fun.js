@@ -1,20 +1,20 @@
-        // Theme toggle - dark by default for personal zone
+        // Archive section defaults to dark (different world aesthetic)
         const themeToggle = document.getElementById('theme-toggle');
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const html = document.documentElement;
 
-        // Check for saved personal zone theme, default to dark
-        const savedTheme = localStorage.getItem('personal-theme');
-        if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
-        }
-        // If no saved theme, HTML already has data-theme="dark"
+        // Use sessionStorage so it resets to dark when tab is closed
+        const savedTheme = sessionStorage.getItem('personal-theme');
+        const theme = (savedTheme === 'dark' || savedTheme === 'light')
+            ? savedTheme
+            : 'dark'; // Default to dark mode
+        html.setAttribute('data-theme', theme);
 
         function toggleTheme() {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('personal-theme', newTheme);
+            sessionStorage.setItem('personal-theme', newTheme);
         }
 
         themeToggle.addEventListener('click', toggleTheme);
@@ -30,6 +30,6 @@
             doorIcon.style.color = 'var(--glow)';
             
             setTimeout(() => {
-                window.location.href = '/vault-5b2c9/personal.html';
+                window.location.href = '/archive/personal.html';
             }, 300);
         });
