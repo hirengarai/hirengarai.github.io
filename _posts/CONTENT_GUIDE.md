@@ -220,7 +220,7 @@ Location: `static/interests.html`
     <div class="media-details">
         <div class="media-title">
             Frieren: Beyond Journey's End
-            <a href="https://myanimelist.net/anime/52991" target="_blank" class="external-link" title="MAL">↗</a>
+            <a href="https://myanimelist.net/anime/52991"  target="_blank" rel="noopener noreferrer" class="external-link" title="MAL">↗</a>
         </div>
         <div class="media-note">Episode 10 · slow, thoughtful pace</div>
     </div>
@@ -237,7 +237,7 @@ Location: `static/interests.html`
     </div>
     <p class="media-title">
         The Boy and the Heron
-        <a href="https://www.imdb.com/title/tt6587046/" target="_blank" class="external-link" title="IMDB">↗</a>
+        <a href="https://www.imdb.com/title/tt6587046/"  target="_blank" rel="noopener noreferrer" class="external-link" title="IMDB">↗</a>
     </p>
     <p class="media-note">Dreamlike visuals, quiet themes. 8/10.</p>
 </div>
@@ -248,11 +248,11 @@ Location: `static/interests.html`
 ```html
 <ul class="link-list collapsed" id="links-list">
     <li>
-        <a href="https://myanimelist.net/profile/username" target="_blank">MyAnimeList</a>
+        <a href="https://myanimelist.net/profile/username"  target="_blank" rel="noopener noreferrer">MyAnimeList</a>
         <span class="link-desc">Anime tracking and ratings</span>
     </li>
     <li>
-        <a href="https://letterboxd.com/username" target="_blank">Letterboxd</a>
+        <a href="https://letterboxd.com/username"  target="_blank" rel="noopener noreferrer">Letterboxd</a>
         <span class="link-desc">Movie diary and reviews</span>
     </li>
     <!-- Add more links... -->
