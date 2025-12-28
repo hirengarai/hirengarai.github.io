@@ -1,3 +1,24 @@
+// =================================================================
+// MAIN INDEX PAGE STYLES
+// =================================================================
+// Stylesheet for the homepage (index.html)
+// Features:
+// - Light/Dark theme using CSS variables
+// - Falling characters background animation
+// - Theme toggle button (fixed position)
+// - Section navigation tabs
+// - Tooltips with auto-positioning
+// - Profile header layout
+// - Publications and teaching tables
+// - Footer with links
+// - Responsive design for mobile/tablet/desktop
+// =================================================================
+
+// -----------------------------------------------------------------
+// GLOBAL RESET
+// -----------------------------------------------------------------
+// Reset all elements to prevent browser inconsistencies
+// -----------------------------------------------------------------
         *,
         *::before,
         *::after {
@@ -6,6 +27,12 @@
             padding: 0;
         }
 
+// -----------------------------------------------------------------
+// PAGE LOAD FADE-IN
+// -----------------------------------------------------------------
+// Prevents flash of unstyled content (FOUC)
+// JavaScript adds .loaded class when ready
+// -----------------------------------------------------------------
         html {
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -15,34 +42,55 @@ html.loaded {
     opacity: 1;
 }
 
+// -----------------------------------------------------------------
+// CSS CUSTOM PROPERTIES (THEME VARIABLES)
+// -----------------------------------------------------------------
+// Light theme (default) - Professional clean aesthetic
+// --bg: Background color
+// --text: Main text color
+// --link: Link color
+// --border: Border and divider color
+// --toggle-safe-right: Dynamic padding for theme toggle
+// -----------------------------------------------------------------
         :root {
-            --bg: #fafafa;
-            --bg-subtle: #f5f5f5;
-            --text: #1a1a1a;
-            --text-secondary: #555;
-            --text-muted: #888;
-            --link: #2563eb;
-            --link-hover: #1d4ed8;
-            --border: #e5e5e5;
-            --border-dark: #d0d0d0;
-            --toggle-safe-right: 0px;
+            --bg: #fafafa;                  // Light gray background
+            --bg-subtle: #f5f5f5;           // Slightly darker background
+            --text: #1a1a1a;                // Near-black text
+            --text-secondary: #555;         // Gray secondary text
+            --text-muted: #888;             // Lighter gray muted text
+            --link: #2563eb;                // Blue links
+            --link-hover: #1d4ed8;          // Darker blue on hover
+            --border: #e5e5e5;              // Light gray borders
+            --border-dark: #d0d0d0;         // Darker gray borders
+            --toggle-safe-right: 0px;       // Safe area for theme toggle
         }
 
+// -----------------------------------------------------------------
+// DARK THEME OVERRIDES
+// -----------------------------------------------------------------
+// Dark theme colors when [data-theme="dark"] is applied to <html>
+// Activated by theme toggle or system preference
+// -----------------------------------------------------------------
         [data-theme="dark"] {
-            --bg: #121212;
-            --bg-subtle: #1e1e1e;
-            --text: #e5e5e5;
-            --text-secondary: #aaa;
-            --text-muted: #777;
-            --link: #60a5fa;
-            --link-hover: #93c5fd;
-            --border: #333;
-            --border-dark: #444;
+            --bg: #121212;                  // Almost black background
+            --bg-subtle: #1e1e1e;           // Slightly lighter background
+            --text: #e5e5e5;                // Light gray text
+            --text-secondary: #aaa;         // Medium gray secondary text
+            --text-muted: #777;             // Darker gray muted text
+            --link: #60a5fa;                // Light blue links
+            --link-hover: #93c5fd;          // Lighter blue on hover
+            --border: #333;                 // Dark gray borders
+            --border-dark: #444;            // Lighter dark gray borders
         }
 
+// -----------------------------------------------------------------
+// HTML & BODY BASE STYLES
+// -----------------------------------------------------------------
+// Sets up the basic document styling and behavior
+// -----------------------------------------------------------------
         html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            scroll-behavior: smooth;                // Smooth scrolling for anchor links
+            overflow-x: hidden;                     // Prevent horizontal scroll
             background-color: var(--bg);
             color: var(--text);
         }
@@ -51,31 +99,35 @@ html.loaded {
             font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.7;
-            font-size: 16px;
-            overflow-x: hidden;
-            position: relative;
+            line-height: 1.7;                       // Readable line height
+            font-size: 16px;                        // Base font size
+            overflow-x: hidden;                     // Prevent horizontal scroll
+            position: relative;                     // For absolute child positioning
         }
 
+// -----------------------------------------------------------------
+// SUBTLE BACKGROUND PATTERN
+// -----------------------------------------------------------------
+// Adds a subtle dotted pattern to the background
+// Uses ::after pseudo-element to avoid affecting content
+// Different opacity for light vs dark theme
+// -----------------------------------------------------------------
         body::after {
             content: '';
-            position: fixed;
-            inset: 0;
+            position: fixed;                        // Fixed to viewport
+            inset: 0;                               // Cover entire viewport
             background:
-                repeating-radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 3px),
-                repeating-radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.08) 0 1px, transparent 1px 4px),
-                repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0 1px, transparent 1px 2px);
-            opacity: 0.6;
-            pointer-events: none;
-            z-index: -2;
+                repeating-radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.06) 0 1px, transparent 1px 3px);
+            opacity: 0.45;                          // Light theme opacity
+            pointer-events: none;                   // Don't block clicks
+            z-index: 0;                             // Behind content
         }
 
+        // Dark theme: lighter pattern, lower opacity
         [data-theme="dark"] body::after {
             background:
-                repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 3px),
-                repeating-radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 4px),
-                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 2px);
-            opacity: 0.4;
+                repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 3px);
+            opacity: 0.3;
         }
 
         img {
@@ -145,6 +197,8 @@ html.loaded {
             margin: 0 auto;
             padding: 40px 24px;
             padding-right: calc(24px + var(--toggle-safe-right));
+            position: relative;
+            z-index: 2;
         }
 
         /* Falling characters background */
@@ -155,7 +209,7 @@ html.loaded {
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
+            z-index: 1;
             overflow: hidden;
         }
 
@@ -183,11 +237,11 @@ html.loaded {
             }
 
             10% {
-                opacity: 0.15;
+                opacity: 0.14;
             }
 
             90% {
-                opacity: 0.15;
+                opacity: 0.14;
             }
 
             100% {

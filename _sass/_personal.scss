@@ -1,69 +1,108 @@
-// ===========================================
+// =================================================================
 // PERSONAL SECTION STYLES
-// ===========================================
+// =================================================================
+// Stylesheet for personal section pages (About, Photography, Thoughts, etc.)
+// Features:
+// - Retro/Terminal aesthetic with dark default theme
+// - Scanline effect overlay (dark mode only)
+// - Sticky navigation (top + bottom for mobile)
+// - Photo grid layouts and lightbox
+// - Timeline view for about page
+// - Tag filter chips for blog posts
+// - Monospace typography (Courier New)
+// - Theme toggle with light mode option
+// =================================================================
 
-// === CSS VARIABLES ===
+// -----------------------------------------------------------------
+// CSS CUSTOM PROPERTIES (THEME VARIABLES)
+// -----------------------------------------------------------------
+// Dark theme (default) - Retro terminal aesthetic
+// --bg: Background (almost black)
+// --text: Matrix-style green text
+// --glow: Accent green glow color
+// --accent: Cyan highlights
+// --warning: Yellow warnings
+// --icon-accent: Gold icon color
+// --link-pink: Pink link accent
+// -----------------------------------------------------------------
 :root {
-    --bg: #0a0a0a;
-    --bg-subtle: #111;
-    --text: #00ff00;
-    --text-secondary: #aaa;
-    --text-muted: #666;
-    --border: #333;
-    --accent: #0ff;
-    --warning: #ff0;
-    --glow: #00ff88;
-    --icon-accent: #ffd95e;
-    --link-pink: #f472b6;
+    --bg: #0a0a0a;                      // Almost black background
+    --bg-subtle: #111;                  // Slightly lighter black
+    --text: #00ff00;                    // Matrix green terminal text
+    --text-secondary: #aaa;             // Gray secondary text
+    --text-muted: #666;                 // Darker gray muted text
+    --border: #333;                     // Dark gray borders
+    --accent: #0ff;                     // Cyan accent color
+    --warning: #ff0;                    // Yellow warning color
+    --glow: #00ff88;                    // Green glow effect
+    --icon-accent: #ffd95e;             // Gold icon color
+    --link-pink: #f472b6;               // Pink link accent
 }
 
+// -----------------------------------------------------------------
+// LIGHT THEME OVERRIDES (Optional)
+// -----------------------------------------------------------------
+// Light theme colors when [data-theme="light"] is applied
+// Maintains readability while keeping distinct aesthetic
+// -----------------------------------------------------------------
 [data-theme="light"] {
-    --bg: #f5f5f0;
-    --bg-subtle: #eaeae5;
-    --text: #2d5a27;
-    --text-secondary: #444;
-    --text-muted: #888;
-    --border: #ccc;
-    --accent: #0969da;
-    --warning: #9a6700;
-    --glow: #10b981;
-    --icon-accent: #8f6a00;
-    --link-pink: #be185d;
+    --bg: #f5f5f0;                      // Cream background
+    --bg-subtle: #eaeae5;               // Slightly darker cream
+    --text: #2d5a27;                    // Dark green text
+    --text-secondary: #444;             // Dark gray secondary
+    --text-muted: #888;                 // Medium gray muted
+    --border: #ccc;                     // Light gray borders
+    --accent: #0969da;                  // Blue accent
+    --warning: #9a6700;                 // Dark yellow warning
+    --glow: #10b981;                    // Emerald glow
+    --icon-accent: #8f6a00;             // Dark gold icons
+    --link-pink: #be185d;               // Dark pink links
 }
 
-// === BASE RESET ===
+// -----------------------------------------------------------------
+// GLOBAL RESET
+// -----------------------------------------------------------------
+// Reset all elements to prevent browser inconsistencies
+// -----------------------------------------------------------------
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-// === BODY ===
+// -----------------------------------------------------------------
+// BODY & RETRO SCANLINE EFFECT
+// -----------------------------------------------------------------
+// Sets monospace typography and retro terminal aesthetic
+// ::before creates CRT monitor scanline effect (dark mode only)
+// -----------------------------------------------------------------
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;    // Retro monospace font
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.6;
-    font-size: 15px;
-    min-height: 100vh;
+    line-height: 1.6;                                   // Readable line height
+    font-size: 15px;                                    // Base font size
+    min-height: 100vh;                                  // Full viewport height
     transition: background-color 0.3s ease, color 0.3s ease;
 
-    // Scanline effect
+    // CRT Scanline Effect (dark mode only)
     &::before {
         content: '';
-        position: fixed;
+        position: fixed;                                // Fixed to viewport
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none;
+        pointer-events: none;                           // Don't block clicks
+        // Horizontal scanlines (1px line every 2px)
         background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 2px);
-        z-index: 1000;
-        opacity: 1;
+        z-index: 1000;                                  // Above content
+        opacity: 1;                                     // Visible in dark mode
         transition: opacity 0.3s ease;
     }
 }
 
+// Hide scanlines in light mode
 [data-theme="light"] body::before {
     opacity: 0;
 }
