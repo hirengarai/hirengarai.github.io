@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiren's Personal Corner - Photos, Random Thoughts">
+    <link rel="icon" sizes="32x32" href="/assets/images/favicon.ico">
+    <title>Hiren's Personal Stuff</title>
+
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <!-- Personal Hub Styles -->
+    <link rel="stylesheet" href="/assets/css/personal-hub.css">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav top-nav--simple">
+        <a href="/" class="back-link">
+            <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">arrow_back</span>
+            Return to Reality
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light mode" title="Toggle theme">
+            <span class="material-symbols-outlined icon-sun">light_mode</span>
+            <span class="material-symbols-outlined icon-moon">dark_mode</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="/" class="nav-back">
+            <span class="material-symbols-outlined">arrow_back</span>
+            back
+        </a>
+        <a href="/" class="nav-academic" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Return to Reality
+        </a>
+        <button class="theme-toggle nav-toggle" id="theme-toggle-mobile" aria-label="Toggle light mode" title="Toggle theme">
+            <span class="material-symbols-outlined icon-sun">light_mode</span>
+            <span class="material-symbols-outlined icon-moon">dark_mode</span>
+        </button>
+    </nav>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Personal Stuff</h1>
+            <p class="header-subtitle">// welcome to my corner of the internet //</p>
+        </header>
+
+        <!-- Section Cards Grid -->
+        <div class="sections-grid">
+            
+            <a href="/personal/about" class="section">
+                <div class="section-header">
+                    <span class="section-icon material-symbols-outlined">person</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <p class="section-desc">Who I am beyond research — interests, hobbies, and random facts.</p>
+                <div class="section-arrow">know more ⟶</div>
+            </a>
+
+            <a href="/personal/photography" class="section">
+                <div class="section-header">
+                    <span class="section-icon material-symbols-outlined">photo_camera</span>
+                    <h2 class="section-title">Photography</h2>
+                </div>
+                <p class="section-desc">Moments I've captured — travel, nature, and everyday life.</p>
+                <div class="section-arrow">have a look ⟶</div>
+            </a>
+
+            <a href="/personal/thoughts" class="section">
+                <div class="section-header">
+                    <span class="section-icon material-symbols-outlined">psychology</span>
+                    <h2 class="section-title">Thoughts</h2>
+                </div>
+                <p class="section-desc">Random musings, ideas, and shower thoughts.</p>
+                <div class="section-arrow">explore ⟶</div>
+            </a>
+
+            <a href="/personal/interests" class="section">
+                <div class="section-header">
+                    <span class="section-icon material-symbols-outlined">headphones</span>
+                    <h2 class="section-title">Interests</h2>
+                </div>
+                <p class="section-desc">What I'm reading, watching, listening to, and learning.</p>
+                <div class="section-arrow">see if matches ⟶</div>
+            </a>
+
+            <a href="/personal/contact" class="section">
+                <div class="section-header">
+                    <span class="section-icon material-symbols-outlined">mail</span>
+                    <h2 class="section-title">Say Hello</h2>
+                </div>
+                <p class="section-desc">Want to chat about non-crypto stuff? Reach out!</p>
+                <div class="section-arrow">reach out ⟶</div>
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            <p>Made with <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle; color: #f87171;">favorite</span> using GPT. Hiren © 2026</p>
+        </footer>
+
+    </div>
+
+    <!-- Theme init script -->
+    <script>
+        (function() {
+            var theme = localStorage.getItem('personal-theme');
+            document.documentElement.setAttribute('data-theme', theme || 'dark');
+        })();
+    </script>
+
+    <!-- Personal Hub Scripts -->
+    <script src="/assets/js/personal-hub.js"></script>
+
+</body>
+
+</html>

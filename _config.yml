@@ -1,0 +1,39 @@
+# Site settings
+title: Hiren
+description: "Hirendra Kumar Garai — Research Fellow at NTU Singapore"
+url: "https://hirengarai.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Permalinks for blog posts
+permalink: /thoughts/:year/:month/:day/:title/
+
+# Default layout for posts
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "vlog"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - _posts/CONTENT_GUIDE.md
+  - node_modules
+  - vendor
+
+# Keep files
+keep_files:
+  - assets/images
+  - assets/audio
+  - assets/docs
+  - assets/pictures
+  - assets/videos

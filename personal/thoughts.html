@@ -1,0 +1,78 @@
+---
+layout: personal-page
+title: Thoughts
+subtitle: "// vlogs, math notes, and quick reflections //"
+description: "Thoughts — Vlogs, math notes, and short reflections"
+permalink: /personal/thoughts/
+show_header: true
+has_lightbox: false
+extra_css: |
+    .thoughts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    
+    .entry {
+        display: block;
+        text-decoration: none;
+    }
+    
+    .entry-title {
+        color: var(--text);
+        font-weight: bold;
+    }
+    
+    .entry-link {
+        background: none;
+        border: 1px dashed var(--border);
+        color: var(--text-muted);
+        font-family: 'Courier New', monospace;
+        font-size: 0.75rem;
+        padding: 8px 16px;
+        margin-top: 14px;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.2s;
+        text-decoration: none;
+    }
+    
+    .entry-link:hover {
+        background: var(--icon-accent);
+        border-color: var(--icon-accent);
+        color: var(--bg);
+    }
+---
+
+<div class="filter-row">
+    <span class="filter-chip active" data-filter="all">All</span>
+    <span class="filter-chip" data-filter="vlog">Vlog</span>
+    <span class="filter-chip" data-filter="math">Math</span>
+    <span class="filter-chip" data-filter="notes">Notes</span>
+</div>
+
+<section class="thoughts-grid">
+    {% if site.posts.size > 0 %}
+        {% for post in site.posts %}
+        <div class="entry" data-tags="{{ post.tags | join: ' ' | downcase }}">
+            <h2 class="entry-title">{{ post.title }}</h2>
+            <div class="entry-meta">{{ post.date | date: "%b %d, %Y" }}{% if post.read_time %} · {{ post.read_time }}{% endif %}</div>
+            {% if post.tags.size > 0 %}
+            <div class="entry-tags">
+                {% for tag in post.tags %}
+                <span class="entry-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <p class="entry-body">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+            <a href="{{ post.url | relative_url }}" class="entry-link">read</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty-state">
+            <div class="empty-state-icon">📝</div>
+            <p>No thoughts yet. Check back soon!</p>
+        </div>
+    {% endif %}
+</section>

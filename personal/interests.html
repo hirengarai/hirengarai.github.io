@@ -1,0 +1,219 @@
+---
+layout: personal-page
+title: Interests
+subtitle: "// movies, anime, playlists, and useful links //"
+description: "Interests — movies, anime, and useful links"
+show_header: true
+has_lightbox: false
+extra_css: |
+    .interest-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+    
+    @media (min-width: 900px) {
+        .interest-grid {
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            grid-auto-flow: dense;
+        }
+        
+        .interest-grid .interest-card:nth-child(1) { grid-column: span 4; }
+        .interest-grid .interest-card:nth-child(2) { grid-column: span 4; }
+        .interest-grid .interest-card:nth-child(3) { grid-column: span 4; }
+        .interest-grid .interest-card:nth-child(4) { grid-column: span 12; }
+    }
+    
+    .interest-card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+        background: var(--bg-subtle);
+    }
+    
+    .interest-title {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+        color: var(--text);
+        font-weight: bold;
+    }
+    
+    .media-entry { margin-bottom: 14px; }
+    
+    .media-list.collapsed .media-item:nth-child(n+4) { display: none; }
+    .watched-list.collapsed .media-entry:nth-child(n+4) { display: none; }
+    .reading-list.collapsed .media-item:nth-child(n+4) { display: none; }
+---
+
+<section class="interest-grid">
+    <!-- Currently Watching Card -->
+    <article class="interest-card">
+        <div class="interest-title">Currently Watching</div>
+        <div class="status-row">
+            <span class="status-pill">Anime</span>
+            <span class="status-pill">In Progress</span>
+        </div>
+        <div class="media-list collapsed" id="watching-list">
+            <div class="media-item">
+                <div class="media-thumb">
+                    <img src="{{ '/assets/pictures/IMG_1411.JPG' | relative_url }}" alt="Frieren">
+                </div>
+                <div class="media-details">
+                    <div class="media-title">
+                        <a href="https://myanimelist.net/anime/52991" target="_blank">Frieren: Beyond Journey's End</a>
+                    </div>
+                    <div class="media-note">Episode 10 · slow, thoughtful pace</div>
+                </div>
+            </div>
+            <div class="media-item">
+                <div class="media-thumb"></div>
+                <div class="media-details">
+                    <div class="media-title">
+                        <a href="https://myanimelist.net/anime/19" target="_blank">Monster</a>
+                    </div>
+                    <div class="media-note">Rewatch · the writing still hits</div>
+                </div>
+            </div>
+            <div class="media-item">
+                <div class="media-thumb"></div>
+                <div class="media-details">
+                    <div class="media-title">Vinland Saga S2</div>
+                    <div class="media-note">Episode 5 · different vibe from S1</div>
+                </div>
+            </div>
+            <div class="media-item">
+                <div class="media-thumb"></div>
+                <div class="media-details">
+                    <div class="media-title">Bocchi the Rock!</div>
+                    <div class="media-note">Comfort watch · great animation</div>
+                </div>
+            </div>
+        </div>
+        <button class="view-more-btn" data-target="watching-list" data-collapsed="true">view more</button>
+    </article>
+
+    <!-- Finished Watching Card -->
+    <article class="interest-card">
+        <div class="interest-title">Finished Watching</div>
+        <div class="watched-list collapsed" id="watched-list">
+            <div class="media-entry">
+                <div class="status-row">
+                    <span class="status-pill">Movie</span>
+                </div>
+                <p class="media-title">
+                    <a href="https://www.imdb.com/title/tt6587046/" target="_blank">The Boy and the Heron</a>
+                </p>
+                <p class="media-note">Dreamlike visuals, quiet themes. 8/10.</p>
+            </div>
+            <div class="media-entry">
+                <div class="status-row">
+                    <span class="status-pill">Anime</span>
+                </div>
+                <p class="media-title">
+                    <a href="https://myanimelist.net/anime/53165" target="_blank">Pluto</a>
+                </p>
+                <p class="media-note">Solid mystery with elegant pacing.</p>
+            </div>
+            <div class="media-entry">
+                <div class="status-row">
+                    <span class="status-pill">Series</span>
+                </div>
+                <p class="media-title">Shogun (2024)</p>
+                <p class="media-note">Beautifully shot, great performances.</p>
+            </div>
+            <div class="media-entry">
+                <div class="status-row">
+                    <span class="status-pill">Anime</span>
+                </div>
+                <p class="media-title">Spy x Family S2</p>
+                <p class="media-note">More wholesome chaos. 7/10.</p>
+            </div>
+            <div class="media-entry">
+                <div class="status-row">
+                    <span class="status-pill">Movie</span>
+                </div>
+                <p class="media-title">Oppenheimer</p>
+                <p class="media-note">Dense, intense, memorable.</p>
+            </div>
+        </div>
+        <button class="view-more-btn" data-target="watched-list" data-collapsed="true">view more</button>
+    </article>
+
+    <!-- Currently Reading Card -->
+    <article class="interest-card">
+        <div class="interest-title">Reading</div>
+        <div class="status-row">
+            <span class="status-pill">Book</span>
+        </div>
+        <div class="reading-list" id="reading-list">
+            <div class="media-item">
+                <div class="media-thumb"></div>
+                <div class="media-details">
+                    <div class="media-title">Gödel, Escher, Bach</div>
+                    <div class="media-note">Notes on recursion</div>
+                </div>
+            </div>
+            <div class="media-item">
+                <div class="media-thumb"></div>
+                <div class="media-details">
+                    <div class="media-title">Yotsuba&!</div>
+                    <div class="media-note">Pure joy</div>
+                </div>
+            </div>
+            <div class="media-item">
+                <div class="media-thumb"></div>
+                <div class="media-details">
+                    <div class="media-title">The Art of Problem Solving</div>
+                    <div class="media-note">Math puzzles</div>
+                </div>
+            </div>
+        </div>
+        <!-- No view more needed - only 3 items -->
+    </article>
+
+    <!-- Useful Links Card - Full Width -->
+    <article class="interest-card">
+        <div class="interest-title">Useful Links</div>
+        <ul class="link-list collapsed" id="links-list">
+            <li>
+                <a href="https://myanimelist.net/profile/username" target="_blank">MyAnimeList</a>
+                <span class="link-desc">Anime tracking and ratings</span>
+            </li>
+            <li>
+                <a href="https://letterboxd.com/username" target="_blank">Letterboxd</a>
+                <span class="link-desc">Movie diary and reviews</span>
+            </li>
+            <li>
+                <a href="https://animethemes.moe" target="_blank">AnimeThemes</a>
+                <span class="link-desc">OP/ED collection</span>
+            </li>
+            <li>
+                <a href="#" target="_blank">Spotify Playlist</a>
+                <span class="link-desc">Current rotation</span>
+            </li>
+            <li>
+                <a href="https://anilist.co" target="_blank">AniList</a>
+                <span class="link-desc">Alternative anime tracker</span>
+            </li>
+            <li>
+                <a href="https://trakt.tv" target="_blank">Trakt</a>
+                <span class="link-desc">TV show tracking</span>
+            </li>
+            <li>
+                <a href="https://goodreads.com" target="_blank">Goodreads</a>
+                <span class="link-desc">Book tracking</span>
+            </li>
+            <li>
+                <a href="https://rateyourmusic.com" target="_blank">RateYourMusic</a>
+                <span class="link-desc">Music discovery</span>
+            </li>
+            <li>
+                <a href="https://last.fm" target="_blank">Last.fm</a>
+                <span class="link-desc">Scrobbling history</span>
+            </li>
+        </ul>
+        <button class="view-more-btn" data-target="links-list" data-collapsed="true">read more</button>
+    </article>
+</section>

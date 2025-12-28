@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Hirendra Kumar Garai. Research Fellow at NTU Singapore. PhD from BITS Pilani, Masters from Visva-Bharati. Bolpur College alumni. Bolpur High School alma mater. Cryptanalysis of symmetric primitives and quantum computing.">
+    <meta property="og:title" content="Hirendra Kumar Garai">
+    <meta property="og:description"
+        content="Cryptography researcher at NTU Singapore. Publications, CV, and contact info.">
+    <meta property="og:image" content="https://hirengarai.github.io/assets/images/hiren_sun_potrait.jpg">
+    <link rel="icon" sizes="32x32" href="assets/images/favicon.ico">
+    <title>Hiren</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500&family=Caveat:wght@500&family=Playwrite+US+Trad:wght@100..400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Noto+Serif+Bengali:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Latin+Modern+Math&display=swap" rel="stylesheet">
+
+    <script src="assets/js/index-theme.js"></script>
+    <link rel="stylesheet" href="assets/css/index.css">
+    
+</head>
+
+<body>
+    <!-- Falling characters background -->
+    <div class="falling-chars" id="falling-container"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" data-tip="Toggle theme">
+        <span class="material-symbols-outlined icon-sun">light_mode</span>
+        <span class="material-symbols-outlined icon-moon">dark_mode</span>
+    </button>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="name-bengali">হীরেন্দ্র কুমার গরাই</div>
+                <div class="name-casual">
+                    You can call me <em data-tooltip="Play audio"
+                        onclick="document.getElementById('pronounce').play()">hiren</em>
+                    <audio id="pronounce" preload="none">
+                        <source src="assets/audio/name.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-info">
+                    <div class="name-official">Hirendra Kumar Garai</div>
+                    <div class="header-email">
+                        <a href="mailto:hirendra.garai@ntu.edu.sg">hirendra.garai@ntu.edu.sg</a>
+                    </div>
+                </div>
+                <figure>
+                    <img src="assets/images/hiren_sun_potrait.jpg" alt="Portrait of Hiren Garai" class="profile-image">
+                    <!-- <figcaption>Hiren Garai</figcaption>          -->
+                </figure>
+                <!-- <img src="assets/images/hirendra-potrait2.jpg" alt="Hiren Garai" class="profile-image"> -->
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Greeting -->
+            <div class="greeting-wrapper">
+                <div class="greeting">Konnichiwa!</div>
+                <div class="greeting-info">
+                    <span class="greeting-info-btn material-symbols-outlined">info</span>
+                    <span class="greeting-tooltip" id="greeting-tooltip">Japanese — Hello</span>
+                </div>
+            </div>
+
+            <p class="intro-text">
+                I am a cryptography researcher working on the analysis and security of symmetric-key primitives.
+                My work involves using automated tools like SAT solvers, MILP, and SMT solvers to find vulnerabilities
+                in ciphers, alongside exploring quantum computing applications in cryptanalysis.
+            </p>
+            <!-- <p class="intro-text">
+                Research interests: symmetric-key cryptanalysis, differential-linear attacks, stream ciphers, block ciphers,
+                and quantum cryptanalysis.
+            </p> -->
+
+            <!-- Section Navigation - Now with links -->
+            <nav class="section-nav">
+                <a href="#work" class="section-tab active" data-section="work">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </span>
+                    Work
+                </a>
+                <a href="#research" class="section-tab" data-section="research">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                            <path d="M11 8v6M8 11h6"></path>
+                        </svg>
+                    </span>
+                    Research
+                </a>
+                <a href="#teaching" class="section-tab" data-section="teaching">
+                    <span class="tab-icon">
+                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                    </span>
+                    Teaching
+                </a>
+                <a href="#academic" class="section-tab" data-section="academic">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </span>
+                    Academic
+                </a>
+            </nav>
+
+            <!-- Work Section -->
+            <section id="work" class="content-section active">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Work</h2>
+                        <p class="section-subtitle">Current and previous positions</p>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="position-item">
+                        <div class="position-title">Research Fellow</div>
+                        <a href="https://www.ntu.edu.sg/spms" target="_blank" class="position-org">School of Physical
+                            and Mathematical Sciences, NTU Singapore</a>
+                        <div class="position-period">Jan' 2025 - Present</div>
+                        <p class="position-desc">Working with <a href="https://thomaspeyrin.github.io/web/"
+                                target="_blank">Prof. Thomas Peyrin</a> on symmetric-key cryptanalysis and automated
+                            cryptanalysis tools.</p>
+                    </div>
+                    <div class="position-item">
+                        <div class="position-title">Post-doctoral Researcher</div>
+                        <a href="https://www.iitm.ac.in//" target="_blank" class="position-org">IIT Madras</a>
+                        <div class="position-period"> Oct' 2024 - Dec' 2024</div>
+                        <p class="position-desc">Post-doctoral researcher under <a href="https://sites.google.com/site/santanusarkarwb/home"
+                                target="_blank">Prof. Santanu Sarkar</a> focusing on differential-linear cryptanalysis of stream ciphers.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research" class="content-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                            <path d="M11 8v6M8 11h6"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Research</h2>
+                        <p class="section-subtitle">Topics and publications</p>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <p>My research focuses on the security analysis of symmetric-key cryptographic primitives,
+                        particularly stream ciphers and block ciphers. I am learning to develop and apply automated techniques to
+                        discover vulnerabilities and improve cryptanalytic methods.</p>
+
+                    <h3 class="section-divider">Research Topics</h3>
+                    <div class="research-topics">
+                        <span class="topic-tag">Differential-Linear Cryptanalysis</span>
+                        <span class="topic-tag">Stream Ciphers</span>
+                        <span class="topic-tag">SAT/MILP/SMT Solvers</span>
+                        <span class="topic-tag">Quantum Cryptanalysis</span>
+                        <span class="topic-tag">Automated Tools</span>
+                    </div>
+
+                    <h3 class="section-divider">Selected Publications</h3>
+                    <ul class="publication-list">
+                        <li class="publication-item">
+                            <a href="https://doi.org/10.1007/978-3-031-56232-7_14" target="_blank"
+                                class="publication-title" data-tip="Open paper (DOI)">Grover on Chosen IV Related Key Attack Against GRAIN-128a</a>
+                            <div class="publication-meta">with A. Maitra, A. Samanta, S. Kar, M. Mandal, S. Dey — <span
+                                    class="publication-venue" data-tip="Conference on Cryptography & Information Security in India" data-tip-position="right">INDOCRYPT 2023</span></div>
+                        </li>
+                        <li class="publication-item">
+                            <a href="https://doi.org/10.46586/tosc.v2023.i1.89-110" target="_blank"
+                                class="publication-title" data-tip="Open paper (DOI)">Cryptanalysis of Reduced Round ChaCha — New Attack and Deeper
+                                Analysis</a>
+                            <div class="publication-meta">with S. Dey, S. Maitra — <span class="publication-venue" data-tip="Conference on Fast Software Encryption" data-tip-position="right">FSE
+                                    2023</span></div>
+                        </li>
+                        <li class="publication-item">
+                            <a href="https://doi.org/10.1109/TIT.2023.3269790" target="_blank"
+                                class="publication-title" data-tip="Open paper (DOI)">Enhanced Differential-Linear Attacks on Reduced Round
+                                ChaCha</a>
+                            <div class="publication-meta">with S. Dey, N. K. Sharma, S. Sarkar — <span
+                                    class="publication-venue" data-tip="IEEE Transactions on Information Theory" data-tip-position="right">IEEE TIT 2023</span></div>
+                        </li>
+                        <li class="publication-item">
+                            <a href="https://doi.org/10.1007/978-3-031-07082-2_4" target="_blank"
+                                class="publication-title" data-tip="Open paper (DOI)">Revamped Differential-Linear Cryptanalysis on Reduced Round
+                                ChaCha</a>
+                            <div class="publication-meta">with S. Dey, N. K. Sharma, S. Sarkar — <span
+                                    class="publication-venue" data-tip="Annual International Conference on the Theory and Applications of Cryptographic Techniques" data-tip-position="right">EUROCRYPT 2022</span></div>
+                        </li>
+                    </ul>
+
+                    <div class="full-list-divider"></div>
+                    <div class="full-list">
+                        <p>For the complete publication record:</p>
+                        <a class="dblp-button" href="https://dblp.org/pid/320/2344.html" target="_blank" rel="noopener">
+                            View Full List on DBLP
+                            <img class="dblp-icon" src="assets/icons/dblp_col.svg" alt="" width="18" height="18">
+                        </a>
+                    </div>
+
+                    <h3 class="section-divider">Talks</h3>
+                    <ul class="publication-list">
+                        <li class="publication-item">
+                            <span class="publication-title">Cryptanalysis of Reduced Round ChaCha - New Attack & Deeper Analysis</span>
+                            <div class="publication-meta">FSE 2023 · <a href="https://www.youtube.com/watch?v=5CwHx0CRESQ&t=2467s" target="_blank">Video link</a> [<a href="assets/docs/slides/FSE2023_Slides.pdf">slides</a>]</div>
+                        </li>
+                    </ul>
+
+                    <h3 class="section-divider">Visits</h3>
+                    <ul class="publication-list">
+                        <li class="publication-item">
+                            <span class="publication-title">Visiting Researcher, TCG-CREST</span>
+                            <div class="publication-meta">Jul' 2023 · Hosted by <a href="https://www.tcgcrest.org/people/arpita-maitra/" target="_blank">Prof. Arpita Maitra</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Teaching Section -->
+            <section id="teaching" class="content-section">
+                <div class="section-header">
+                    <div class="section-icon teaching-icon">
+                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Teaching</h2>
+                        <p class="section-subtitle">TA experience during PhD</p>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.7;">
+                        During my PhD, I served as a Teaching Assistant for various courses. My responsibilities included 
+                        conducting tutorial sessions, preparing exam questions, evaluating assignments, and helping students 
+                        understand complex mathematical concepts.
+                    </p>
+                    <div class="ta-table-wrapper">
+                        <table class="ta-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Course IC</th>
+                                <th>Duration</th>
+                                <th>Feedback (out of 10)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-name">Probability and Statistics (MATH F113 - T9)</td>
+                                <td>Dr. Sabyasachi Dey</td>
+                                <td>Spring 2021</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">9.7</a></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Mathematics I (Advanced Calculus) (MATH F111 - T8)</td>
+                                <td>--</td>
+                                <td>Fall 2021</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">Feedback not collected</a></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Probability and Statistics (MATH F113 - TI)</td>
+                                <td>Dr. Sabyasachi Dey</td>
+                                <td>Spring 2022</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">7.92</a></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name" data-tip="Core Course">Discrete Mathematics (MATH F213 - T2)</td>
+                                <td>Prof. Alphonse</td>
+                                <td>Fall 2022</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">8.63</a></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name" data-tip="Core Course">Graphs and Networks (MATH F243 - TI)</td>
+                                <td>Prof. Alphonse</td>
+                                <td>Spring 2023</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">9.32</a></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name" data-tip="Core Course">Introduction to Topology (MATH F311 - T2)</td>
+                                <td>Prof. Sharan Gopal</td>
+                                <td>Fall 2023</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">9.69</a></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name" data-tip="Core Course">Differential Geometry (MATH F342 - T1)</td>
+                                <td>Prof. Sumit Viswakarma</td>
+                                <td>Spring 2024</td>
+                                <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener" class="ta-link">8.41</a></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Section -->
+            <section id="academic" class="content-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Academic</h2>
+                        <p class="section-subtitle">Education background</p>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3 class="section-divider">Education</h3>
+                    <div class="education-item">
+                        <div class="education-degree" data-tip="Doctor of Philosophy" data-tip-position="above">Ph.D. in Mathematics</div>
+                        <a href="https://www.bits-pilani.ac.in/hyderabad/" target="_blank"
+                            class="education-institution">BITS Pilani, Hyderabad Campus</a>
+                        <div class="education-details">2020 - 2024 · Advisor: <a
+                                href="https://sites.google.com/view/sabyasachidey/home" target="_blank">Sabyasachi
+                                Dey</a><br>Thesis: Study on Cryptanalysis of ARX-based Ciphers</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree" data-tip="Bachelor of Education" data-tip-position="above">B.Ed in Mathematics</div>
+                        <a href="https://makatti.org/home.php" target="_blank" class="education-institution">Moulana
+                            Abul Kalam Ajad Teachers' Training Institute</a>
+                        <div class="education-details">2018-2020</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree" data-tip="Master of Science" data-tip-position="above">MS in Mathematics</div>
+                        <a href="https://www.visvabharati.ac.in/" target="_blank"
+                            class="education-institution">Visva-Bharati University</a>
+                        <div class="education-details">2016-2018</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree" data-tip="Bachelor of Science" data-tip-position="above">BS in Mathematics</div>
+                        <a href="https://bolpurcollege.edu.in/" target="_blank" class="education-institution">Bolpur
+                            College</a>
+                        <div class="education-details">2013-2016</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer-links">
+                <a href="assets/pdf/hirendra_cv.pdf" data-tip="Download CV">CV</a>
+                <a href="https://scholar.google.com/citations?user=96a2MEsAAAAJ&hl=en" target="_blank" data-tip="Google Scholar profile">Google
+                    Scholar</a>
+                <a href="https://www.linkedin.com/in/hirengarai/" target="_blank" data-tip="LinkedIn profile">LinkedIn</a>
+                <a href="https://github.com/hirengarai" target="_blank" data-tip="GitHub profile">GitHub</a>
+                <a href="vault-5b2c9/fun.html" class="fun-link">Fun →</a>
+                <span class="footer-credit">Made with <span class="material-symbols-outlined" style="font-size: 0.9rem; vertical-align: middle; color: #f87171;">favorite</span> using GPT. Hiren © 2026</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
