@@ -117,9 +117,13 @@ html.loaded {
             opacity: 1;
         }
 
-        @media (pointer: coarse) {
+        @media (hover: none), (pointer: coarse) {
             .tooltip-bubble {
                 display: none;
+            }
+
+            [data-tip] {
+                pointer-events: none;
             }
         }
 
@@ -390,9 +394,10 @@ html.loaded {
             visibility: visible;
         }
 
-        .name-casual em.tooltip-active::after {
-            opacity: 1;
-            visibility: visible;
+        @media (hover: none), (pointer: coarse) {
+            .name-casual em::after {
+                display: none;
+            }
         }
 
         .profile-image {

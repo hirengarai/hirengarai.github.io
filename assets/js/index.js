@@ -79,6 +79,16 @@ const greetingData = getGreeting();
 document.querySelector('.greeting').textContent = greetingData.text;
 document.querySelector('#greeting-tooltip').textContent = greetingData.tooltip;
 
+// Name pronunciation: play audio only
+const nameTrigger = document.querySelector('.name-casual em');
+const nameAudio = document.getElementById('pronounce');
+if (nameTrigger && nameAudio) {
+    nameTrigger.addEventListener('click', () => {
+        nameAudio.currentTime = 0;
+        nameAudio.play();
+    });
+}
+
 // Fun link coming soon
 const funLink = document.querySelector('.fun-link');
 if (funLink) {
