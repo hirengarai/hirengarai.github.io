@@ -106,7 +106,7 @@ if (greetingInfo && greetingTooltip) {
         } else {
             greetingTooltip.classList.add('tooltip-active');
             if (greetingTimer) clearTimeout(greetingTimer);
-            greetingTimer = setTimeout(hideGreetingTooltip, 1500);
+            greetingTimer = setTimeout(hideGreetingTooltip, 1850);
         }
     });
 
@@ -125,6 +125,43 @@ window.addEventListener('scroll', hideGreetingTooltip, { passive: true });
 window.addEventListener('touchstart', (e) => {
     if (greetingInfo && !greetingInfo.contains(e.target)) {
         hideGreetingTooltip();
+    }
+}, { passive: true });
+
+// Profile photo tooltip tap support
+const profileFigure = document.querySelector('.profile-figure');
+const profileTooltip = document.querySelector('#profile-tooltip');
+let profileTimer = null;
+
+function hideProfileTooltip() {
+    if (profileTooltip) {
+        profileTooltip.classList.remove('tooltip-active');
+    }
+    if (profileTimer) {
+        clearTimeout(profileTimer);
+        profileTimer = null;
+    }
+}
+
+if (profileFigure && profileTooltip) {
+    profileFigure.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (profileTooltip.classList.contains('tooltip-active')) {
+            hideProfileTooltip();
+        } else {
+            profileTooltip.classList.add('tooltip-active');
+            if (profileTimer) clearTimeout(profileTimer);
+            profileTimer = setTimeout(hideProfileTooltip, 1850);
+        }
+    });
+}
+
+window.addEventListener('scroll', hideProfileTooltip, { passive: true });
+window.addEventListener('touchstart', (e) => {
+    if (profileFigure && !profileFigure.contains(e.target)) {
+        hideProfileTooltip();
     }
 }, { passive: true });
 
@@ -253,13 +290,23 @@ const sections = document.querySelectorAll('.content-section');
                 left = rect.left + rect.width / 2 - tipRect.width / 2;
                 placed = true;
             } else {
-                if (top >= gap) {
+                // Try above first
+                if (top >= gap && top + tipRect.height <= window.innerHeight - gap) {
                     placed = true;
-                } else if (window.innerWidth - rect.right >= tipRect.width + gap) {
+                }
+                // Try below if above doesn't work
+                else if (rect.bottom + tipRect.height + gap <= window.innerHeight - gap) {
+                    top = rect.bottom + gap;
+                    placed = true;
+                }
+                // Try right if vertical doesn't work
+                else if (window.innerWidth - rect.right >= tipRect.width + gap) {
                     top = rect.top + rect.height / 2 - tipRect.height / 2;
                     left = rect.right + gap;
                     placed = true;
-                } else if (rect.left >= tipRect.width + gap) {
+                }
+                // Try left if right doesn't work
+                else if (rect.left >= tipRect.width + gap) {
                     top = rect.top + rect.height / 2 - tipRect.height / 2;
                     left = rect.left - tipRect.width - gap;
                     placed = true;
@@ -313,7 +360,7 @@ const sections = document.querySelectorAll('.content-section');
                 e.preventDefault();
                 hidePronunciation();
                 el.classList.add('tooltip-active');
-                pronunciationTimer = setTimeout(hidePronunciation, 1800);
+                pronunciationTimer = setTimeout(hidePronunciation, 1850);
             });
         });
 
@@ -322,38 +369,40 @@ const sections = document.querySelectorAll('.content-section');
 
         // Falling characters
         const container = document.getElementById('falling-container');
-        const symbols = ['\u2295', '<<<', '>>>', '\u2200', 'RSA', 'Markov', '\u2202', '\u2203', '\u2205', 'Key-recovery', '\u221B', '\u221E', '\u222C', '\u222D', '\u222E', 'FFT', '\u229E', '\u229F', '\u2A27', '\u2230', 'SPECK', '\u2234', '\u2235', ' T\u2080', 'T\u2081', 'T\u2082', '\u2208', 'Bernstein', '\u2208', '\u2211', 'Shamir', '\u2243', '\u2208', '\u8747', 'bias', 'φ', '\u227A', 'correlation', '\u2227', '\u2228', '[', ']', '\u{1D53D}\u2082', '\u221A', '0', '1', 'f', 'div', 'F', 'curl', 'π', '\u03B3', '\u0393', 'ζ', '{', '}', 'Pr', 'AES', 'ChaCha', 'Salsa', 'Gauss', 'Euler', 'Urysohn', 'e', '+'];
+        if (container) {
+            const symbols = ['\u2295', '<<<', '>>>', '\u2200', 'RSA', 'Markov', '\u2202', '\u2203', '\u2205', 'Key-recovery', '\u221B', '\u221E', '\u222C', '\u222D', '\u222E', 'FFT', '\u229E', '\u229F', '\u2A27', '\u2230', 'SPECK', '\u2234', '\u2235', ' T\u2080', 'T\u2081', 'T\u2082', '\u2208', 'Bernstein', '\u2208', '\u2211', 'Shamir', '\u2243', '\u2208', '\u8747', 'bias', 'φ', '\u227A', 'correlation', '\u2227', '\u2228', '[', ']', '\u{1D53D}\u2082', '\u221A', '0', '1', 'f', 'div', 'F', 'curl', 'π', '\u03B3', '\u0393', 'ζ', '{', '}', 'Pr', 'AES', 'ChaCha', 'Salsa', 'Gauss', 'Euler', 'Urysohn', 'e', '+'];
 
-        const MAX_SYMBOLS = 10;
-        let activeSymbols = 0;
+            const MAX_SYMBOLS = 10;
+            let activeSymbols = 0;
 
-        function createChar() {
-            if (activeSymbols >= MAX_SYMBOLS) return;
+            function createChar() {
+                if (activeSymbols >= MAX_SYMBOLS) return;
 
-            const char = document.createElement('span');
-            char.className = 'falling-char';
-            char.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                const char = document.createElement('span');
+                char.className = 'falling-char';
+                char.innerText = symbols[Math.floor(Math.random() * symbols.length)];
 
-            const left = Math.random() * 90 + 5;
-            const duration = Math.random() * 15 + 25;
-            const fontSize = Math.random() * 6 + 12;
+                const left = Math.random() * 90 + 5;
+                const duration = Math.random() * 15 + 25;
+                const fontSize = Math.random() * 6 + 12;
 
-            char.style.left = `${left}%`;
-            char.style.fontSize = `${fontSize}px`;
-            char.style.animation = `fall ${duration}s linear forwards`;
+                char.style.left = `${left}%`;
+                char.style.fontSize = `${fontSize}px`;
+                char.style.animation = `fall ${duration}s linear forwards`;
 
-            container.appendChild(char);
-            activeSymbols++;
+                container.appendChild(char);
+                activeSymbols++;
 
-            char.addEventListener('animationend', () => {
-                char.remove();
-                activeSymbols--;
-            });
-        }
+                char.addEventListener('animationend', () => {
+                    char.remove();
+                    activeSymbols--;
+                });
+            }
 
-        setInterval(createChar, 3000);
-        for (let i = 0; i < 4; i++) {
-            setTimeout(createChar, i * 2500);
+            setInterval(createChar, 3000);
+            for (let i = 0; i < 4; i++) {
+                setTimeout(createChar, i * 2500);
+            }
         }
 
         // Scroll position persistence (only if scrolled down)

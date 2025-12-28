@@ -99,15 +99,17 @@ html.loaded {
 
         .tooltip-bubble {
             position: fixed;
-            background: var(--text);
+            background: color-mix(in srgb, var(--text) 92%, transparent);
             color: var(--bg);
-            font-size: 0.6rem;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 0.65rem;
             letter-spacing: 0.3px;
-            padding: 3px 6px;
+            padding: 3px 7px;
             border-radius: 3px;
             border: 1px solid var(--text);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(6px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             white-space: nowrap;
             z-index: 2000;
             pointer-events: none;
@@ -116,7 +118,7 @@ html.loaded {
         }
 
         [data-theme="dark"] .tooltip-bubble {
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .tooltip-bubble.visible {
@@ -379,25 +381,26 @@ html.loaded {
             left: calc(100% + 8px);
             top: 50%;
             transform: translateY(-50%);
-            background: var(--text);
+            background: color-mix(in srgb, var(--text) 92%, transparent);
             color: var(--bg);
             font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 0.6rem;
-            padding: 3px 6px;
+            font-size: 0.65rem;
+            padding: 3px 7px;
             border-radius: 3px;
             border: 1px solid var(--text);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             white-space: nowrap;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.2s ease, visibility 0.2s ease;
             pointer-events: none;
             z-index: 50;
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         [data-theme="dark"] .name-casual em::after {
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .name-casual em:hover::after {
@@ -411,13 +414,66 @@ html.loaded {
             }
         }
 
+        .profile-figure {
+            position: relative;
+            display: inline-block;
+        }
+
         .profile-image {
             width: 120px;
             height: 120px;
             border-radius: 8px;
             object-fit: cover;
             border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        .profile-figure:hover .profile-image {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-tooltip {
+            position: absolute;
+            left: 50%;
+            top: calc(100% + 8px);
+            transform: translateX(-50%);
+            background: color-mix(in srgb, var(--text) 92%, transparent);
+            border: 1px solid var(--text);
+            color: var(--bg);
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3px;
+            padding: 3px 7px;
+            border-radius: 3px;
+            width: max-content;
+            max-width: min(200px, calc(100vw - 48px));
+            line-height: 1.4;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 80;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        [data-theme="dark"] .profile-tooltip {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-figure:hover .profile-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .profile-tooltip.tooltip-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
 
         /* Mobile header */
         @media (max-width: 700px) {
@@ -509,19 +565,21 @@ html.loaded {
             left: calc(100% + 6px);
             top: 50%;
             transform: translateY(-50%);
-            background: var(--text);
+            background: color-mix(in srgb, var(--text) 92%, transparent);
             border: 1px solid var(--text);
             color: var(--bg);
             font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 4px;
+            font-size: 0.65rem;
+            padding: 3px 7px;
+            border-radius: 3px;
             white-space: nowrap;
             opacity: 0;
             visibility: hidden;
             transition: all 0.2s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             z-index: 100;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         [data-theme="dark"] .greeting-tooltip {
