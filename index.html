@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Hirendra Kumar Garai. Research Fellow at NTU Singapore. PhD from BITS Pilani, Masters from Visva-Bharati. Bolpur College alumni. Bolpur High School alma mater. Cryptanalysis of symmetric primitives and quantum computing.">
+        content="Hirendra Kumar Garai. Alias Hiren Garai. Research Fellow at NTU Singapore. PhD from BITS Pilani. Masters from Visva-Bharati. Bolpur College alumni. Bolpur High School alma mater. Cryptanalysis of symmetric primitives and quantum computing.">
     <meta property="og:title" content="Hirendra Kumar Garai">
     <meta property="og:description"
         content="Cryptography researcher at NTU Singapore. Publications, CV, and contact info.">
@@ -37,12 +37,12 @@
 
 <body>
     <!-- Falling characters background -->
-    <div class="falling-chars" id="falling-container"></div>
+    <div class="falling-chars" id="falling-container" aria-hidden="true"></div>
 
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" data-tip="Toggle theme">
-        <span class="material-symbols-outlined icon-sun">light_mode</span>
-        <span class="material-symbols-outlined icon-moon">dark_mode</span>
+        <span class="material-symbols-outlined icon-sun" aria-hidden="true">light_mode</span>
+        <span class="material-symbols-outlined icon-moon" aria-hidden="true">dark_mode</span>
     </button>
 
     <div class="container">
@@ -51,7 +51,7 @@
             <div class="header-left">
                 <div class="name-bengali">হীরেন্দ্র কুমার গরাই</div>
                 <div class="name-casual">
-                    you can call me <em data-tooltip="Play audio">hiren</em>
+                    you can call me <em data-tooltip="Play audio" role="button" tabindex="0" aria-label="Play pronunciation of Hiren">hiren</em>
                     <audio id="pronounce" preload="none">
                         <source src="assets/audio/name.mp3" type="audio/mpeg">
                     </audio>
@@ -64,9 +64,9 @@
                         <a href="mailto:hirendra.garai@ntu.edu.sg">hirendra.garai@ntu.edu.sg</a>
                     </div>
                 </div>
-                <figure class="profile-figure">
+                <figure class="profile-figure" tabindex="0" aria-describedby="profile-tooltip">
                     <img src="assets/images/hiren_w_panda.jpg" alt="Portrait of Hiren Garai" class="profile-image">
-                    <span class="profile-tooltip" id="profile-tooltip">at singapore zoo with the famous panda, 2025</span>
+                    <span class="profile-tooltip" id="profile-tooltip" role="tooltip">at singapore zoo with the famous panda, 2025</span>
                     <!-- <figcaption>Hiren Garai</figcaption>          -->
                 </figure>
                 <!-- <img src="assets/images/hirendra-potrait2.jpg" alt="Hiren Garai" class="profile-image"> -->
@@ -78,9 +78,9 @@
             <!-- Greeting -->
             <div class="greeting-wrapper">
                 <div class="greeting">Konnichiwa!</div>
-                <div class="greeting-info">
-                    <span class="greeting-info-btn material-symbols-outlined">info</span>
-                    <span class="greeting-tooltip" id="greeting-tooltip">Japanese — Hello</span>
+                <div class="greeting-info" role="button" tabindex="0" aria-describedby="greeting-tooltip" aria-label="Greeting language info">
+                    <span class="greeting-info-btn material-symbols-outlined" aria-hidden="true">info</span>
+                    <span class="greeting-tooltip" id="greeting-tooltip" role="tooltip">Japanese — Hello</span>
                 </div>
             </div>
 
@@ -95,26 +95,26 @@
             </p> -->
 
             <!-- Section Navigation - Now with links -->
-            <nav class="section-nav">
-                <a href="#work" class="section-tab active" data-section="work">
+            <nav class="section-nav" aria-label="Primary sections" role="tablist">
+                <a href="#work" class="section-tab active" data-section="work" id="tab-work" role="tab" aria-controls="work" aria-selected="true" tabindex="0">
                     <span class="tab-icon">
                         <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
                     </span>
                     Work
                 </a>
-                <a href="#research" class="section-tab" data-section="research">
+                <a href="#research" class="section-tab" data-section="research" id="tab-research" role="tab" aria-controls="research" aria-selected="false" tabindex="-1">
                     <span class="tab-icon">
                         <i class="fa-solid fa-microscope" aria-hidden="true"></i>
                     </span>
                     Research
                 </a>
-                <a href="#teaching" class="section-tab" data-section="teaching">
+                <a href="#teaching" class="section-tab" data-section="teaching" id="tab-teaching" role="tab" aria-controls="teaching" aria-selected="false" tabindex="-1">
                     <span class="tab-icon">
                         <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
                     </span>
                     Teaching
                 </a>
-                <a href="#academic" class="section-tab" data-section="academic">
+                <a href="#academic" class="section-tab" data-section="academic" id="tab-academic" role="tab" aria-controls="academic" aria-selected="false" tabindex="-1">
                     <span class="tab-icon">
                         <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                     </span>
@@ -123,7 +123,7 @@
             </nav>
 
             <!-- Work Section -->
-            <section id="work" class="content-section active">
+            <section id="work" class="content-section active" role="tabpanel" aria-labelledby="tab-work" tabindex="0">
                 <div class="section-header">
                     <div class="section-icon">
                         <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
@@ -155,7 +155,7 @@
             </section>
 
             <!-- Research Section -->
-            <section id="research" class="content-section">
+            <section id="research" class="content-section" role="tabpanel" aria-labelledby="tab-research" tabindex="0">
                 <div class="section-header">
                     <div class="section-icon">
                         <i class="fa-solid fa-microscope" aria-hidden="true"></i>
@@ -238,7 +238,7 @@
             </section>
 
             <!-- Teaching Section -->
-            <section id="teaching" class="content-section">
+            <section id="teaching" class="content-section" role="tabpanel" aria-labelledby="tab-teaching" tabindex="0">
                 <div class="section-header">
                     <div class="section-icon teaching-icon">
                         <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
@@ -255,7 +255,7 @@
                         understand complex mathematical concepts.
                     </p>
                     <div class="ta-table-wrapper">
-                        <table class="ta-table">
+                        <table class="ta-table" aria-label="Teaching assistant feedback">
                         <thead>
                             <tr>
                                 <th>Course</th>
@@ -272,7 +272,7 @@
                                 <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener noreferrer" class="ta-link">9.7</a></td>
                             </tr>
                             <tr>
-                                <td class="course-name">Mathematics I (Advanced Calculus)<br>(MATHF111 - T8)</td>
+                                <td class="course-name">Mathematics I (Advanced Calculus)(MATHF111 - T8)</td>
                                 <td>--</td>
                                 <td>Fall 2021</td>
                                 <td><a href="assets/docs/teaching_experience.pdf" target="_blank" rel="noopener noreferrer" class="ta-link ta-link--small">Feedback not<br>collected</a></td>
@@ -314,7 +314,7 @@
             </section>
 
             <!-- Academic Section -->
-            <section id="academic" class="content-section">
+            <section id="academic" class="content-section" role="tabpanel" aria-labelledby="tab-academic" tabindex="0">
                 <div class="section-header">
                     <div class="section-icon">
                         <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
@@ -338,7 +338,7 @@
                         <div class="education-degree" data-tip="Bachelor of Education" data-tip-position="above">B.Ed with method subject Mathematics</div>
                         <a href="https://makatti.org/home.php" target="_blank" rel="noopener noreferrer" class="education-institution">Moulana
                             Abul Kalam Ajad Teachers' Training Institute, India</a>
-                        <div class="education-details">2018 - 2020</div>
+                        <div class="education-details">Class of 2020</div>
                     </div>
                     <div class="education-item">
                         <div class="education-degree" data-tip="Master of Science" data-tip-position="above">MS in Mathematics</div>
@@ -358,13 +358,13 @@
                             Secondary School Examination, Grade 12</div>
                              <a href="https://wbchse.wb.gov.in/" target="_blank" rel="noopener noreferrer" class="education-institution">West
                                 Bengal Council of Higher Secondary Education, India</a>
-                        <div class="education-details">2013</div>
+                        <div class="education-details">Class of 2013</div>
                     </div>
                     
                     <div class="education-item">
                         <div class="education-degree" data-tip="Secondary School Examination" data-tip-position="above">Secondary School Examination, Grade 10 </div>
                             <a href="https://wbbse.wb.gov.in/Web/Home?l=Z%2F%2F2JeEw6P%2FkXiUjdLauQg%3D%3D" target="_blank" rel="noopener noreferrer" class="education-institution">West Bengal Board of Secondary Education, India</a>
-                        <div class="education-details">2011</div>
+                        <div class="education-details">Class of 2011</div>
                     </div>
 
                     

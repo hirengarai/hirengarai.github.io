@@ -1013,7 +1013,8 @@ html.loaded {
         }
 
         .education-degree {
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.05rem;
             color: var(--text);
             display: inline-block;
         }
@@ -1026,11 +1027,11 @@ html.loaded {
 
         .education-institution {
             color: var(--link);
-            font-size: 0.9375rem;
+            font-size: 0.9rem;
         }
 
         .education-details {
-            font-size: 0.8125rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             margin-top: 4px;
         }

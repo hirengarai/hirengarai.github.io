@@ -156,6 +156,10 @@ function createTooltipHandler(triggerElement, tooltipElement) {
             triggerElement.addEventListener('mouseleave', hide);
         }
 
+        // Keyboard focus support
+        triggerElement.addEventListener('focus', show);
+        triggerElement.addEventListener('blur', hide);
+
         // Hide when scrolling or touching elsewhere
         window.addEventListener('scroll', hide, { passive: true });
         window.addEventListener('touchstart', (e) => {
@@ -188,10 +192,17 @@ const profileTooltipHandler = createTooltipHandler(
 // -----------------------------------------------------------------
 const nameTrigger = document.querySelector('.name-casual em');
 const nameAudio = document.getElementById('pronounce');
+const playNameAudio = () => {
+    nameAudio.currentTime = 0;  // Reset to start
+    nameAudio.play();            // Play audio
+};
 if (nameTrigger && nameAudio) {
-    nameTrigger.addEventListener('click', () => {
-        nameAudio.currentTime = 0;  // Reset to start
-        nameAudio.play();            // Play audio
+    nameTrigger.addEventListener('click', playNameAudio);
+    nameTrigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            playNameAudio();
+        }
     });
 }
 
@@ -222,18 +233,18 @@ const sections = document.querySelectorAll('.content-section');
 
         // Activates a section by ID, deactivating all others
         function activateSection(sectionId) {
-            // Remove 'active' class from all tabs and sections
-            sectionTabs.forEach(t => t.classList.remove('active'));
-            sections.forEach(s => s.classList.remove('active'));
-
-            // Find and activate the target tab and section
-            const tab = document.querySelector(`.section-tab[data-section="${sectionId}"]`);
-            const section = document.getElementById(sectionId);
-
-            if (tab && section) {
-                tab.classList.add('active');
-                section.classList.add('active');
-            }
+            // Update active classes and ARIA states
+            sectionTabs.forEach(t => {
+                const isActive = t.dataset.section === sectionId;
+                t.classList.toggle('active', isActive);
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                t.setAttribute('tabindex', isActive ? '0' : '-1');
+            });
+            sections.forEach(s => {
+                const isActive = s.id === sectionId;
+                s.classList.toggle('active', isActive);
+                s.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+            });
         }
 
         // Handles URL hash changes (e.g., #work, #research)
@@ -241,6 +252,13 @@ const sections = document.querySelectorAll('.content-section');
             const hash = window.location.hash.slice(1); // Remove # symbol
             if (hash && document.getElementById(hash)) {
                 activateSection(hash);
+                return;
+            }
+
+            const defaultTab = document.querySelector('.section-tab.active') || sectionTabs[0];
+            const defaultSection = defaultTab ? defaultTab.dataset.section : (sections[0] && sections[0].id);
+            if (defaultSection) {
+                activateSection(defaultSection);
             }
         }
 

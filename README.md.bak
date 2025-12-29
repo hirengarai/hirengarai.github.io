@@ -1,0 +1,56 @@
+# hirengarai.github.io
+
+Personal academic website built with Jekyll.
+
+## Structure
+
+```
+├── _config.yml          # Jekyll configuration
+├── _layouts/            # Page templates
+├── _includes/           # Reusable components
+├── _sass/               # SCSS stylesheets
+│   ├── _index.scss      # Home page styles
+│   ├── _fun.scss        # Fun page styles
+│   └── _personal.scss   # Personal page styles
+├── _posts/              # Blog posts (if any)
+├── assets/
+│   ├── css/             # Compiled CSS
+│   ├── js/              # JavaScript files
+│   ├── images/          # Images
+│   ├── audio/           # Audio files
+│   ├── docs/            # Documents (CV, etc.)
+│   ├── pictures/        # Photos
+│   └── videos/          # Videos
+├── personal/            # Personal section pages
+├── index.html           # Homepage
+├── fun.html             # Fun intro page
+├── personal.html        # Personal hub
+├── Gemfile              # Ruby dependencies
+└── README.md
+```
+
+## Local Development
+
+```bash
+# Install dependencies
+bundle install
+
+# Run local server
+bundle exec jekyll serve
+
+# With live reload
+bundle exec jekyll serve --livereload
+```
+
+Open http://localhost:4000
+
+## Deployment
+
+Push to GitHub and enable GitHub Pages in repository settings.
+Site will be live at https://hirengarai.github.io
+
+## Notes
+
+- The HTML files contain inline styles and scripts for maximum compatibility
+- SCSS files in _sass/ are available if you want to modularize styles later
+- JS files in assets/js/ are available if you want to externalize scripts later
