@@ -280,6 +280,41 @@ const sections = document.querySelectorAll('.content-section');
         });
 
 // -----------------------------------------------------------------
+// RESOURCES SECTION TAB SYSTEM
+// -----------------------------------------------------------------
+// Independent tab set inside Resources (Books/URLs/Videos/Others)
+// Avoids changing the URL hash so the main tabs keep working
+// -----------------------------------------------------------------
+const resourceTabs = document.querySelectorAll('#resources .resources-tab');
+const resourcePanels = document.querySelectorAll('#resources .resources-panel');
+
+function activateResourcePanel(panelKey) {
+    resourceTabs.forEach((tab) => {
+        const isActive = tab.dataset.resource === panelKey;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    resourcePanels.forEach((panel) => {
+        const isActive = panel.id === `resources-panel-${panelKey}`;
+        panel.classList.toggle('active', isActive);
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    });
+}
+
+if (resourceTabs.length && resourcePanels.length) {
+    const defaultResourceTab = document.querySelector('#resources .resources-tab.active') || resourceTabs[0];
+    if (defaultResourceTab) {
+        activateResourcePanel(defaultResourceTab.dataset.resource);
+    }
+
+    resourceTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            activateResourcePanel(tab.dataset.resource);
+        });
+    });
+}
+
+// -----------------------------------------------------------------
 // THEME TOGGLE (Light/Dark Mode)
 // -----------------------------------------------------------------
 // Follows system preference by default (prefers-color-scheme)

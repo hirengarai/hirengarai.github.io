@@ -120,6 +120,12 @@
                     </span>
                     Academic
                 </a>
+                <a href="#resources" class="section-tab" data-section="resources" id="tab-resources" role="tab" aria-controls="resources" aria-selected="false" tabindex="-1">
+                    <span class="tab-icon">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    </span>
+                    Resources
+                </a>
             </nav>
 
             <!-- Work Section -->
@@ -368,6 +374,109 @@
                     </div>
 
                     
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="content-section" role="tabpanel" aria-labelledby="tab-resources" tabindex="0">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h2 class="section-title">Resources</h2>
+                        <p class="section-subtitle">Books, playlists, notes, and articles I found useful</p>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <p>A small set of references that guide how I try to learn and work in cryptography. Sometimes I update this list along the way as I read and build.</p>
+
+                    <nav class="resources-nav" aria-label="Resources categories" role="tablist">
+                        <button class="resources-tab active" type="button" data-resource="books" id="resources-tab-books" role="tab" aria-controls="resources-panel-books" aria-selected="true">
+                            Books
+                        </button>
+                        <button class="resources-tab" type="button" data-resource="urls" id="resources-tab-urls" role="tab" aria-controls="resources-panel-urls" aria-selected="false">
+                            URLs
+                        </button>
+                        <button class="resources-tab" type="button" data-resource="videos" id="resources-tab-videos" role="tab" aria-controls="resources-panel-videos" aria-selected="false">
+                            Videos
+                        </button>
+                        <button class="resources-tab" type="button" data-resource="others" id="resources-tab-others" role="tab" aria-controls="resources-panel-others" aria-selected="false">
+                            Others
+                        </button>
+                    </nav>
+
+                    <div class="resources-panel active" id="resources-panel-books" role="tabpanel" aria-labelledby="resources-tab-books" aria-hidden="false">
+                        <h3 class="section-divider">Books I Liked</h3>
+                        <ul class="publication-list">
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://books.google.com.sg/books?id=uhl_kYfpgo4C&lpg=PP1&pg=PP1#v=onepage&q&f=false" target="_blank" rel="noopener noreferrer">Introduction to Cryptography</a>
+                                <div class="publication-meta">Douglas R. Stinson · Clear introduction to modern cryptography and proof techniques.</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://www.amazon.com/Public-Key-Cryptography-Theory-Practice/dp/8131708322" target="_blank" rel="noopener noreferrer">Public-Key Cryptography: Theory and Practice</a>
+                                <div class="publication-meta">Abhijit Das · Practical and theoretical foundations of public-key systems.</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://crypto.stanford.edu/~dabo/cryptobook/BonehShoup_0_4.pdf" target="_blank" rel="noopener noreferrer">A Graduate Course in Applied Cryptography (Boneh &amp; Shoup)</a>
+                                <div class="publication-meta">Dan Boneh and Victor Shoup · Comprehensive graduate-level applied cryptography text.</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resources-panel" id="resources-panel-urls" role="tabpanel" aria-labelledby="resources-tab-urls" aria-hidden="true">
+                        <h3 class="section-divider">URLs & Articles</h3>
+                        <ul class="publication-list">
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://www.crypto101.io/" target="_blank" rel="noopener noreferrer">Crypto 101</a>
+                                <div class="publication-meta">Intro guide · crypto101.io</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://missing.csail.mit.edu/" target="_blank" rel="noopener noreferrer">The Missing Semester of Your CS Education</a>
+                                <div class="publication-meta">Practical CS skills · MIT</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://www.reddit.com/r/crypto/wiki/index/" target="_blank" rel="noopener noreferrer">r/crypto Wiki</a>
+                                <div class="publication-meta">Community resources · Reddit</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://gotchas.salusa.dev/how_to_read.html" target="_blank" rel="noopener noreferrer">How to Read a Research Paper</a>
+                                <div class="publication-meta">Reading guide · Gotchas</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resources-panel" id="resources-panel-videos" role="tabpanel" aria-labelledby="resources-tab-videos" aria-hidden="true">
+                        <h3 class="section-divider">Videos & Playlists</h3>
+                        <ul class="publication-list">
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://www.youtube.com/playlist?list=PL58C6Q25sEEHXvACYxiav_lC2DqSlC7Og" target="_blank" rel="noopener noreferrer">Cryptography (Playlist)</a>
+                                <div class="publication-meta">YouTube · Playlist</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://www.edx.org/cs50" target="_blank" rel="noopener noreferrer">CS50: Introduction to Computer Science</a>
+                                <div class="publication-meta">Course · edX</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resources-panel" id="resources-panel-others" role="tabpanel" aria-labelledby="resources-tab-others" aria-hidden="true">
+                        <h3 class="section-divider">Others (Notes & Tools)</h3>
+                        <ul class="publication-list">
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://cryptography.io/en/latest/" target="_blank" rel="noopener noreferrer">cryptography.io Documentation</a>
+                                <div class="publication-meta">Library docs · Python</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://github.com/sobolevn/awesome-cryptography" target="_blank" rel="noopener noreferrer">Awesome Cryptography</a>
+                                <div class="publication-meta">Curated list · GitHub</div>
+                            </li>
+                            <li class="publication-item">
+                                <a class="publication-title" href="https://www.reddit.com/r/cryptography/comments/scb6pm/information_and_learning_resources_for/" target="_blank" rel="noopener noreferrer">Learning Resources Thread</a>
+                                <div class="publication-meta">Discussion · Reddit</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
