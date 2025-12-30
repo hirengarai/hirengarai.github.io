@@ -63,6 +63,13 @@ html.loaded {
             --border: #e5e5e5;              // Light gray borders
             --border-dark: #d0d0d0;         // Darker gray borders
             --toggle-safe-right: 0px;       // Safe area for theme toggle
+            --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            --font-serif: "Source Serif 4", "Georgia", "Times New Roman", Times, serif;
+            --font-hand: "Indie Flower", "Comic Sans MS", "Segoe Print", "Bradley Hand", cursive;
+            --font-script: "Caveat", "Comic Sans MS", "Segoe Script", "Bradley Hand", cursive;
+            --font-bn: "Noto Serif Bengali", "Nirmala UI", "Vrinda", "SolaimanLipi", serif;
+            --font-math: "Latin Modern Math", "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+            --font-icon: "Material Symbols Outlined", "Segoe UI Symbol", "Noto Sans Symbols 2", sans-serif;
         }
 
 // -----------------------------------------------------------------
@@ -96,7 +103,7 @@ html.loaded {
         }
 
         body {
-            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-sans);
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.7;                       // Readable line height
@@ -153,7 +160,7 @@ html.loaded {
             position: fixed;
             background: color-mix(in srgb, var(--text) 92%, transparent);
             color: var(--bg);
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.65rem;
             letter-spacing: 0.3px;
             padding: 3px 7px;
@@ -216,7 +223,7 @@ html.loaded {
         .falling-char {
             position: absolute;
             top: -60px;
-            font-family: 'Latin Modern Math', 'STIX Two Math', serif;
+            font-family: var(--font-math);
             color: var(--text);
             opacity: 0.08;
             user-select: none;
@@ -389,7 +396,7 @@ html.loaded {
         }
 
         .name-bengali {
-            font-family: 'Noto Serif Bengali', serif;
+            font-family: var(--font-bn);
             font-size: 1.5rem;
             color: var(--text);
             font-weight: 600;
@@ -397,7 +404,7 @@ html.loaded {
         }
 
         .name-official {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: var(--font-serif);
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--text);
@@ -415,7 +422,7 @@ html.loaded {
 
         .name-casual em {
             color: var(--link);
-            font-family: 'Indie Flower', cursive;
+            font-family: var(--font-hand);
             font-size: 1.3rem;
             font-style: normal;
             cursor: pointer;
@@ -454,7 +461,7 @@ html.loaded {
             transform: translateY(-50%);
             background: color-mix(in srgb, var(--text) 92%, transparent);
             color: var(--bg);
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.65rem;
             padding: 3px 7px;
             border-radius: 3px;
@@ -524,7 +531,7 @@ html.loaded {
             background: color-mix(in srgb, var(--text) 92%, transparent);
             border: 1px solid var(--text);
             color: var(--bg);
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.65rem;
             letter-spacing: 0.3px;
             padding: 3px 7px;
@@ -610,7 +617,7 @@ html.loaded {
         }
 
         .greeting {
-            font-family: 'Caveat', cursive;
+            font-family: var(--font-script);
             font-size: 2rem;
             color: var(--text-secondary);
         }
@@ -629,7 +636,7 @@ html.loaded {
             background: transparent;
             color: var(--text-muted);
             font-size: 18px;
-            font-family: 'Material Symbols Outlined', sans-serif;
+            font-family: var(--font-icon);
             cursor: default;
             display: flex;
             align-items: center;
@@ -651,7 +658,7 @@ html.loaded {
             background: color-mix(in srgb, var(--text) 92%, transparent);
             border: 1px solid var(--text);
             color: var(--bg);
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.65rem;
             padding: 3px 7px;
             border-radius: 3px;
@@ -971,7 +978,7 @@ html.loaded {
         }
 
         .section-title {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: var(--font-serif);
             font-size: 1.375rem;
             font-weight: 600;
             color: var(--text);

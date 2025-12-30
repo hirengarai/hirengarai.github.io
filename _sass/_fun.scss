@@ -11,6 +11,8 @@
             --text-muted: #888;
             --border: #333;
             --glow: #00ff88;
+            --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            --font-mono: "Space Mono", "Courier New", Courier, "Liberation Mono", monospace;
         }
 
         [data-theme="light"] {
@@ -27,7 +29,7 @@
         }
 
         body {
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: var(--font-sans);
             background-color: var(--bg);
             color: var(--text);
             display: flex;
@@ -108,7 +110,7 @@
             color: var(--text);
             text-decoration: none;
             font-size: 0.875rem;
-            font-family: 'Courier New', monospace;
+            font-family: var(--font-mono);
             padding: 8px 16px;
             border: 1px solid var(--text);
             transition: all 0.2s;
@@ -209,7 +211,7 @@
                 color: var(--text);
                 text-decoration: none;
                 font-size: 0.8rem;
-                font-family: 'Courier New', monospace;
+                font-family: var(--font-mono);
                 padding: 6px 12px;
                 border: 1px solid var(--text);
                 line-height: 1.6;
@@ -303,7 +305,7 @@
         }
 
         .poster-title {
-            font-family: 'Space Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--text);
@@ -322,7 +324,7 @@
         }
 
         .poster-subtitle {
-            font-family: 'Space Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.7rem;
             color: var(--text-muted);
             letter-spacing: 1px;
@@ -331,7 +333,7 @@
 
         .poster-enter {
             margin-top: 24px;
-            font-family: 'Space Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.75rem;
             color: var(--text-muted);
             padding: 8px 20px;
