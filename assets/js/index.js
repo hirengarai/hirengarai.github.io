@@ -110,6 +110,25 @@ document.querySelector('.greeting').textContent = greetingData.text;
 document.querySelector('#greeting-tooltip').textContent = greetingData.tooltip;
 
 // -----------------------------------------------------------------
+// EMAIL OBFUSCATION
+// -----------------------------------------------------------------
+const emailLink = document.getElementById('email-link');
+if (emailLink) {
+    const codes = emailLink.getAttribute('data-addr-codes');
+    if (codes) {
+        const address = codes
+            .split(',')
+            .map((code) => String.fromCharCode(Number(code.trim())))
+            .join('');
+        setTimeout(() => {
+            emailLink.href = `mailto:${address}`;
+            emailLink.textContent = address;
+            emailLink.setAttribute('aria-label', `Email ${address}`);
+        }, 350);
+    }
+}
+
+// -----------------------------------------------------------------
 // UNIFIED CUSTOM TOOLTIP HANDLER (Mobile & Desktop Support)
 // -----------------------------------------------------------------
 // Handles special tooltips that need custom behavior (greeting, profile)

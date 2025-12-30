@@ -780,8 +780,8 @@ html.loaded {
             cursor: pointer;
             transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
             text-decoration: none;
-            backdrop-filter: blur(2.5px);
-            -webkit-backdrop-filter: blur(2.5px);
+            backdrop-filter: blur(0);
+            -webkit-backdrop-filter: blur(0);
         }
 
         .section-tab .tab-icon {
@@ -864,6 +864,16 @@ html.loaded {
             border-color: var(--tab-color);
             color: var(--tab-color);
             text-decoration: none;
+        }
+
+        .section-tab.active {
+            backdrop-filter: blur(2.5px);
+            -webkit-backdrop-filter: blur(2.5px);
+        }
+
+        .section-tab:hover {
+            backdrop-filter: blur(2.5px);
+            -webkit-backdrop-filter: blur(2.5px);
         }
 
         @media (max-width: 500px) {
@@ -1009,6 +1019,8 @@ html.loaded {
             font-weight: 400;
             cursor: pointer;
             transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            backdrop-filter: blur(0);
+            -webkit-backdrop-filter: blur(0);
         }
 
         .resources-tab:hover,
@@ -1016,6 +1028,16 @@ html.loaded {
             background: var(--resource-accent-soft);
             border-color: var(--resource-accent);
             color: var(--resource-accent);
+        }
+
+        .resources-tab.active {
+            backdrop-filter: blur(2.5px);
+            -webkit-backdrop-filter: blur(2.5px);
+        }
+
+        .resources-tab:hover {
+            backdrop-filter: blur(2.5px);
+            -webkit-backdrop-filter: blur(2.5px);
         }
 
         .resources-tab:focus-visible {
